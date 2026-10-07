@@ -9,7 +9,7 @@
     phone: "720-208-5645", tel: "+17202085645",
     email: "quote@painterhotline.com",
     site: "painterhotline.com",
-    terms: "/terms/",
+    terms: "/terms-of-service/",
     logo: "/images/proposal-logo.jpg",
     warranty: "5-year workmanship warranty",
     promoPct: 25,

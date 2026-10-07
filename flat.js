@@ -8,7 +8,7 @@
     return '<svg class="' + (extra || '') + '" viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat, the Boulder CO Painters brush">' +
       '<defs>' +
       '<linearGradient id="flFerr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9fb0c2"/><stop offset=".5" stop-color="#e6edf4"/><stop offset="1" stop-color="#8ea0b4"/></linearGradient>' +
-      '<linearGradient id="flHandle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a4a70"/><stop offset=".5" stop-color="#1d3557"/><stop offset="1" stop-color="#132740"/></linearGradient>' +
+      '<linearGradient id="flHandle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a4a70"/><stop offset=".5" stop-color="#20483a"/><stop offset="1" stop-color="#132740"/></linearGradient>' +
       '<linearGradient id="flBristle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8c49a"/><stop offset="1" stop-color="#b99a66"/></linearGradient>' +
       '</defs>' +
       /* spiky hair above the head block */
@@ -35,20 +35,20 @@
       '<path d="M58 132 h124 v34 q-62 16 -124 0z" fill="url(#flBristle)"/>' +
       '<path d="M58 150 h124 v16 q-62 16 -124 0z" fill="#4a7a32"/>' +
       '<g class="fl-drip">' +
-      '<path d="M78 166 q4 18 0 26 q-10 2 -8 -12z" fill="#b4552c"/>' +
-      '<path d="M120 170 q5 22 0 30 q-11 2 -9 -14z" fill="#1d3557"/>' +
-      '<path d="M158 164 q4 16 0 24 q-10 2 -8 -11z" fill="#c8a06a"/>' +
+      '<path d="M78 166 q4 18 0 26 q-10 2 -8 -12z" fill="#c48a4a"/>' +
+      '<path d="M120 170 q5 22 0 30 q-11 2 -9 -14z" fill="#20483a"/>' +
+      '<path d="M158 164 q4 16 0 24 q-10 2 -8 -11z" fill="#c9972f"/>' +
       '</g>' +
       /* two arms */
-      '<path class="fl-armL" d="M58 120 q-34 6 -40 34" fill="none" stroke="#1d3557" stroke-width="11" stroke-linecap="round"/>' +
-      '<circle cx="18" cy="156" r="10" fill="#e6edf4" stroke="#1d3557" stroke-width="3"/>' +
-      '<path class="fl-armR" d="M182 120 q36 2 44 30" fill="none" stroke="#1d3557" stroke-width="11" stroke-linecap="round"/>' +
-      '<circle cx="226" cy="152" r="10" fill="#e6edf4" stroke="#1d3557" stroke-width="3"/>' +
+      '<path class="fl-armL" d="M58 120 q-34 6 -40 34" fill="none" stroke="#20483a" stroke-width="11" stroke-linecap="round"/>' +
+      '<circle cx="18" cy="156" r="10" fill="#e6edf4" stroke="#20483a" stroke-width="3"/>' +
+      '<path class="fl-armR" d="M182 120 q36 2 44 30" fill="none" stroke="#20483a" stroke-width="11" stroke-linecap="round"/>' +
+      '<circle cx="226" cy="152" r="10" fill="#e6edf4" stroke="#20483a" stroke-width="3"/>' +
       /* handle as the single leg, with paint splatter on it */
       '<rect x="104" y="196" width="26" height="86" rx="12" fill="url(#flHandle)"/>' +
       '<circle cx="112" cy="218" r="5" fill="#4a7a32"/>' +
-      '<circle cx="124" cy="238" r="4" fill="#b4552c"/>' +
-      '<circle cx="110" cy="256" r="3.5" fill="#c8a06a"/>' +
+      '<circle cx="124" cy="238" r="4" fill="#c48a4a"/>' +
+      '<circle cx="110" cy="256" r="3.5" fill="#c9972f"/>' +
       '<ellipse cx="117" cy="286" rx="22" ry="10" fill="#101f36"/>' +
       /* swoosh, echoing the logo */
       '<path class="fl-bark" d="M150 270 q40 -8 62 -36" fill="none" stroke="#4a7a32" stroke-width="7" stroke-linecap="round" opacity=".85"/>' +
@@ -193,7 +193,7 @@
     [/\b(why (you|should)|what makes|different|better than|choose)\b/i, 'Four things, honestly. Crews that specialize by type of work instead of doing a bit of everything. Over 20 years of Colorado-specific experience, which mostly means knowing what fails here and why. A dedicated project manager so you have one person to call. And a 5-year workmanship warranty in writing, which only works because the preparation is real.'],
     [/\b(twice|again|redo|do it over|short cut|shortcut|cheap (job|bid|quote))\b/i, 'The expensive version of this is doing it twice. A cheap job skips washing, scraping and priming, looks fine for a season, then fails. The second painter has to remove the failed coating before starting, so you pay for the first job, the removal and the correct job. That is the whole reason our prep is itemized in writing.'],
     [/\b(prep|preparation|what.*included|scope|process)\b/i, 'On an exterior: protect the property, power wash, scrape and sand back to a sound edge, fill and caulk, prime what needs it, then the agreed coats on siding, trim, window and door casings, soffit and fascia. Then full cleanup and a walkthrough with you. Interiors follow the same logic indoors. All of it is itemized on your proposal.'],
-    [/\b(deposit|payment|financ|pay|invoice|down)\b/i, 'A deposit reserves your dates, commonly half, and the balance is due at completion after you walk the work with us. Terms are printed on the proposal, and the <a href="/terms/">terms page</a> spells out the rest.'],
+    [/\b(deposit|payment|financ|pay|invoice|down)\b/i, 'A deposit reserves your dates, commonly half, and the balance is due at completion after you walk the work with us. Terms are printed on the proposal, and the <a href="/terms-of-service/">terms page</a> spells out the rest.'],
     [/\b(crew|who does|subcontract|employee|project manager)\b/i, 'Crews that specialize: exterior, interior, cabinets and commercial are not the same skill set. You also get a dedicated project manager, so there is one person accountable for your project rather than a rotating phone tree.'],
     [/\b(proposal|contract|paperwork|sign|agreement|estimate in writing)\b/i, 'Everything goes in writing: surfaces, preparation steps, product line and sheen, coat counts, schedule, payment terms and the warranty. You can sign it electronically right on your phone, and a PDF copy lands in your inbox.'],
     [/\b(schedule|book|dates|when can you start|availability)\b/i, 'Depends on the season and the crew. Interiors are usually easier to place; exterior calendars tighten from late spring through early fall. Tell me the project and your preferred week and I will get a real answer back to you rather than a guess.'],
@@ -201,7 +201,7 @@
     [/\b(cost|price|pricing|how much|rate|charge|expensive)\b/i, 'Published 2026 Front Range data puts exterior painting around <strong>$1.55 to $4.10 per square foot</strong>, interior around <strong>$1.50 to $3.50</strong>, and cabinets between <strong>$2,000 and $8,000</strong>. The <a href="/pricing/">pricing page</a> has a calculator, or I can run a quick quote with you right now.'],
     [/\b(area|serve|cover|location|city|town|near me|where)\b/i, 'We covers the whole Front Range: Denver metro, the south metro through Castle Rock, Boulder County and Longmont, the I-25 towns, the eastern plains out to Fort Morgan, and the mountains from Evergreen to Breckenridge. Find yours on the <a href="/painters-near-me/">locations page</a>.'],
     [/\b(mountain|breckenridge|frisco|dillon|silverthorne|evergreen|georgetown|idaho springs|altitude)\b/i, 'Yes, we paint the mountain towns. Higher elevation means harsher UV, a shorter season and more stain work, so those projects book earlier in the year. Tell me the town and I will tell you what the window looks like.'],
-    [/\b(warranty|guarantee)\b/i, 'Every project carries a <strong>5-year workmanship warranty</strong> in writing, plus the manufacturer warranty on the Sherwin-Williams, PPG or Behr coating. Details on the <a href="/warranty/">warranty page</a>.'],
+    [/\b(warranty|guarantee)\b/i, 'Every project carries a <strong>5-year workmanship warranty</strong> in writing, plus the manufacturer warranty on the Sherwin-Williams, PPG or Behr coating. Details on the <a href="/our-warranty/">warranty page</a>.'],
     [/\b(insur|licen|bonded)\b/i, 'Fully insured, with a certificate provided at the quote. Colorado issues no statewide painting license, so insurance and a written scope are what you should ask any painter to produce.'],
     [/\b(discount|deal|offer|coupon|special|sale|25)\b/i, 'Right now: <strong>25% off projects booked by October 31, 2026</strong>. Labor only, paint and materials not included. See the <a href="/offers/">offer page</a>.'],
     [/\b(peel|flak|bubbl|chalk|fail|crack|bad job|redo)\b/i, 'That is one of our most common calls. Peeling usually traces to moisture, contamination, incompatible layers or missing primer, and the fix depends on which. Send photos through the quick quote and we will tell you what we see.'],
@@ -217,7 +217,7 @@
     [/\b(lead|1978|old house|historic)\b/i, 'Homes built before 1978 may contain lead paint, and federal EPA rules require certified firms and lead-safe work practices when disturbing those surfaces. Tell us the year built and we plan for it.'],
     [/\b(voc|smell|odor|pet|kid|safe|fume)\b/i, 'Most interior paints today are water-based and low in VOC, and Colorado tightened VOC limits in 2020. Zero-VOC options are available if anyone in the home is sensitive.'],
     [/\b(human|person|talk|call|phone|speak)\b/i, 'Easiest way is to call <a href="tel:' + TEL + '">' + DISP + '</a>, or pick "call me back" and I will put you in the queue with a time window.'],
-    [/\b(who are you|about (you|the company|painter hotline)|company|us)\b/i, 'Painter Hotline is a Colorado painting company covering the Front Range from one number, 20+ years of experience, fully insured, 5-year workmanship warranty. More on the <a href="/about/">about page</a>.']
+    [/\b(who are you|about (you|the company|painter hotline)|company|us)\b/i, 'Painter Hotline is a Colorado painting company covering the Front Range from one number, 20+ years of experience, fully insured, 5-year workmanship warranty. More on the <a href="/who-we-are/">about page</a>.']
   ];
 
   function lookup(t) { for (var i = 0; i < KB.length; i++) if (KB[i][0].test(t)) return KB[i][1]; return null; }
