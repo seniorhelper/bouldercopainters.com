@@ -1,756 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boulder Painting Data | Costs, Season &amp; Coating Life</title>
-<meta name="description" content="Boulder painting by the numbers: the real exterior season from freeze data, published 2026 cost ranges, refinish versus replace, and what drives coating life.">
-<link rel="canonical" href="https://bouldercopainters.com/boulder-painting-data/">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Boulder Painting By The Numbers">
-<meta property="og:description" content="Season charts, cost ranges and coating-life factors, all sourced.">
-<meta property="og:url" content="https://bouldercopainters.com/boulder-painting-data/">
-<meta property="og:image" content="https://bouldercopainters.com/images/boulder-painters.jpg">
-<meta property="og:site_name" content="Boulder CO Painters">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="geo.region" content="US-CO">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="/images/boulder-co-painters-favicon.png">
-<link rel="apple-touch-icon" href="/images/boulder-co-painters-favicon.png">
-<meta name="theme-color" content="#ffffff">
-<style>
-:root{
-  --ink:#122033; --ink-2:#38485e; --muted:#5d6b7e; --line:#dce3ec;
-  --blue:#1d3557; --blue-deep:#101f36; --blue-ink:#1a3050;
-  --orange:#b4552c; --orange-ink:#94441f; --teal:#4a7a32; --sun:#c8a06a;
-  --paper:#f4f6f2; --white:#fff;
-  --fd:'Bitter',Georgia,serif; --fu:'Karla',system-ui,-apple-system,sans-serif;
-  --wrap:1180px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:150px}
-body{font-family:var(--fu);font-size:1.02rem;line-height:1.7;color:var(--ink);background:#fff;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:var(--blue-ink)}
-:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-h1,h2,h3,h4{font-family:var(--fd);color:var(--ink);line-height:1.12;letter-spacing:-.015em;font-weight:700}
-h2{font-size:clamp(1.75rem,3.2vw,2.5rem);margin-bottom:12px}
-h3{font-size:1.18rem}
-section{padding:72px 0}
-.band{background:var(--paper)}
-.deep{background:var(--blue-deep);color:#fff}
-.deep h2,.deep h3,.deep h4{color:#fff}
-.deep p{color:rgba(255,255,255,.88)}
-.deep .lead{color:rgba(255,255,255,.82)}
-.deep .eyebrow{color:var(--sun)}
-.deep a{color:#fff}
-.lead{font-size:1.12rem;color:var(--muted);max-width:66ch}
-.eyebrow{font-family:var(--fu);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:10px;display:block}
-.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
-.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:center}
-.split.wide{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
-.split>*{min-width:0}
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Boulder Painting Data: Weather, Housing Age and Costs</title><meta name="description" content="Boulder painting by the numbers: NOAA freeze dates and monthly lows, Census housing age by town, and sourced cost ranges, each with its source."><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"><link rel="canonical" href="https://bouldercopainters.com/boulder-painting-data/"><link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64.png"><link rel="apple-touch-icon" href="/images/apple-touch-icon.png"><link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin><meta property="og:type" content="website"><meta property="og:url" content="https://bouldercopainters.com/boulder-painting-data/"><meta property="og:title" content="Boulder Painting Data: Weather, Housing Age and Costs"><meta property="og:description" content="Boulder painting by the numbers: NOAA freeze dates and monthly lows, Census housing age by town, and sourced cost ranges, each with its source."><meta property="og:image" content="https://bouldercopainters.com/images/og-boulder-co-painters.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="Boulder CO Painters"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#20483a"><style>:root{--ink:#161c24;--ink2:#3d4854;--mute:#596574;--rule:#dfe3e0;--pine:#20483a;--pine-d:#122c23;--sand:#c48a4a;--sand-d:#87592a;--sky:#3d6b8a;--wash:#f7f6f1;--white:#fff;--max:1240px;--fh:'Newsreader',Georgia,serif;--fb:'Inter Tight',system-ui,-apple-system,sans-serif}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:120px}body{font-family:var(--fb);font-size:1.03rem;line-height:1.68;color:var(--ink2);background:var(--white);overflow-x:hidden}h1,h2,h3,h4{font-family:var(--fh);color:var(--ink);line-height:1.15;font-weight:700}h1{font-size:clamp(2.1rem,4.6vw,3.5rem);letter-spacing:-.015em}h2{font-size:clamp(1.6rem,2.9vw,2.3rem);letter-spacing:-.01em}h3{font-size:1.2rem}p{margin-bottom:1rem}a{color:var(--pine);text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:var(--sand-d)}.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}.sr{position:absolute;left:-9999px}.sr:focus{left:8px;top:8px;background:var(--pine);color:#fff;padding:10px 16px;z-index:999;border-radius:4px}.ribbon{background:var(--pine-d);color:#eaf0ec;font-size:.86rem;padding:9px 0}.ribbon .wrap{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:baseline}.ribbon b{color:var(--sand)}.ribbon i{font-style:normal;color:#9fb5a8}.mast{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);border-bottom:1px solid var(--rule);backdrop-filter:blur(8px)}.mast-in{max-width:var(--max);margin:0 auto;padding:14px 24px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center}.logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo img{width:240px;height:auto}.menu{display:flex;gap:26px;justify-content:center}.menu a,.menu button{font:600 .93rem var(--fb);color:var(--ink);background:none;border:0;cursor:pointer;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}.menu a:hover,.menu button:hover,.menu a[aria-current]{border-bottom-color:var(--sand);color:var(--pine)}.pop{position:relative}.pop-list{position:absolute;top:36px;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--rule);border-radius:3px;box-shadow:0 18px 40px rgba(18,44,35,.14);min-width:270px;padding:8px;display:none;z-index:70}.pop[data-open] .pop-list{display:block}.pop-list a{display:block;padding:9px 12px;border:0;font-weight:500}.pop-list a:hover{background:var(--wash)}.call{text-align:right;text-decoration:none}.call b{display:block;font:700 1.26rem var(--fb);color:var(--ink);letter-spacing:-.01em}.call span{display:block;font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand-d);font-weight:700}.ham{display:none;background:none;border:1px solid var(--rule);border-radius:3px;padding:9px 11px;cursor:pointer}.ham span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0}.tray{display:none;border-top:1px solid var(--rule);background:#fff;padding:12px 24px 20px}.tray.on{display:block}.tray a{display:block;padding:11px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-weight:600}.tray a.sub{padding-left:16px;font-weight:500;color:var(--ink2);font-size:.95rem}.lede{border-bottom:1px solid var(--rule);background:var(--wash)}.lede-in{max-width:var(--max);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch}.lede-txt{padding:62px 48px 62px 0}.kicker{display:inline-block;font:700 .74rem var(--fb);letter-spacing:.17em;text-transform:uppercase;color:var(--sand-d);border-top:2px solid var(--sand);padding-top:8px;margin-bottom:18px}.lede h1 em{font-style:normal;color:var(--pine)}.dek{font-size:1.12rem;color:var(--ink2);margin:18px 0 26px;max-width:52ch}.facts{list-style:none;display:grid;gap:9px;margin-bottom:28px}.facts li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:.98rem}.facts li::before{content:"";width:9px;height:9px;background:var(--sand);border-radius:50%;margin-top:9px}.acts{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;font:700 1rem var(--fb);padding:14px 24px;border-radius:3px;text-decoration:none;border:2px solid transparent;cursor:pointer}.btn-fill{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-fill:hover{background:var(--pine-d);color:#fff}.btn-line{border-color:var(--pine);color:var(--pine);background:#fff}.btn-line:hover{background:var(--wash);color:var(--pine-d)}.btn-sand{background:var(--sand);color:#20160a;border-color:var(--sand)}.btn-sand:hover{background:var(--sand-d);color:#fff}.lede-pic{position:relative;min-height:460px}.lede-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.stamp{position:absolute;left:-34px;bottom:34px;background:var(--pine-d);color:#fff;padding:16px 22px;max-width:270px;z-index:2}.stamp b{display:block;font-family:var(--fh);font-size:1.5rem;color:var(--sand)}.stamp span{font-size:.86rem;color:#c9d7cf}.strip{border-bottom:1px solid var(--rule)}.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}.strip div{padding:26px 22px;border-right:1px solid var(--rule)}.strip div:last-child{border-right:0}.strip b{display:block;font-family:var(--fh);font-size:1.85rem;color:var(--pine)}.strip span{font-size:.88rem;color:var(--mute)}.sheet{padding:64px 0}.sheet.tint{background:var(--wash)}.rail{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:52px;align-items:start}.col h2{margin-bottom:14px}.col h3{margin:28px 0 8px}.col ul,.col ol{margin:0 0 16px 20px}.col li{margin-bottom:7px}.aside{position:sticky;top:120px;border-left:3px solid var(--sand);padding-left:20px}.aside h3{font-size:1.05rem;margin-bottom:10px}.aside p{font-size:.94rem;color:var(--mute)}.aside .btn{margin-top:10px;width:100%;justify-content:center}.answer{border-top:3px solid var(--pine);border-bottom:1px solid var(--rule);padding:22px 0;margin:0 0 8px}.answer p{font-size:1.06rem;color:var(--ink);margin:0}.rows{border-top:1px solid var(--rule)}.row{display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:24px;align-items:start;padding:24px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit}.row:hover{background:var(--wash)}.row .no{font-family:var(--fh);font-size:1.6rem;color:var(--sand-d)}.row h3{margin-bottom:5px;color:var(--ink)}.row p{margin:0;font-size:.97rem;color:var(--mute)}.row .go{font:700 .85rem var(--fb);color:var(--pine);white-space:nowrap;align-self:center}.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px;margin-top:26px}.figs img{width:100%;height:230px;object-fit:cover;display:block}.tbl{overflow-x:auto;margin:20px 0}.tbl table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:520px}.tbl caption{text-align:left;font-size:.86rem;color:var(--mute);padding-bottom:9px}.tbl th{text-align:left;font-family:var(--fb);font-weight:700;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--pine);border-bottom:2px solid var(--pine);padding:10px 12px}.tbl td{padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.tbl tr:hover td{background:var(--wash)}.qa{border-top:2px solid var(--pine)}.qa details{border-bottom:1px solid var(--rule)}.qa summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font-family:var(--fh);font-size:1.1rem;color:var(--ink);position:relative;font-weight:700}.qa summary::-webkit-details-marker{display:none}.qa summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:1.5rem;color:var(--sand-d);font-family:var(--fb)}.qa details[open] summary::after{content:"\2013"}.qa .ans{padding:0 40px 20px 0;color:var(--ink2)}.ask{background:var(--pine-d);color:#e9efeb;padding:60px 0}.ask h2{color:#fff}.ask .dek{color:#b9ccc2}.ask-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}.fset{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fld{display:flex;flex-direction:column;gap:6px}.fld.wide{grid-column:1/-1}.fld label{font:600 .84rem var(--fb);color:#cfe0d6}.fld input,.fld select,.fld textarea{background:rgba(255,255,255,.96);border:1px solid transparent;border-radius:3px;padding:12px;font:1rem var(--fb);color:var(--ink)}.fld textarea{min-height:104px;resize:vertical}.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--sand);outline-offset:1px}.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}.note{font-size:.86rem;color:#9fb5a8;margin-top:10px}.msg{display:none;margin-top:12px;padding:12px 14px;border-radius:3px;font-weight:600}.msg.ok{display:block;background:#143a2b;color:#8fe3b4}.msg.bad{display:block;background:#4a1f1a;color:#ffb3a7}.foot{background:var(--ink);color:#aeb8c2;padding:56px 0 0;font-size:.94rem}.foot a{color:#dfe6ec;text-decoration:none}.foot a:hover{color:var(--sand)}.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;padding-bottom:34px;border-bottom:1px solid #2b333c}.foot h3{color:#fff;font-family:var(--fb);font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:14px}.foot ul{list-style:none}.foot li{margin-bottom:8px}.foot-end{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:20px 0;font-size:.86rem;color:#7d8894}.heart-bar{text-align:center;padding:14px 0 26px;font-size:.93rem;color:#aeb8c2}.heart{display:inline-block;color:#ff5a46;font-size:1.15rem;animation:thump 2.6s ease-in-out infinite}@keyframes thump{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}.mapbox{border:1px solid var(--rule);height:330px}.mapbox iframe{width:100%;height:100%;border:0;display:block}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.chip{border:1px solid var(--rule);padding:7px 13px;font-size:.88rem;text-decoration:none;color:var(--pine);background:#fff}.chip:hover{border-color:var(--pine);background:var(--wash)}.crumbs{font-size:.84rem;color:var(--mute);padding:16px 0 0}.crumbs a{color:var(--mute)}.bar{position:fixed;left:0;right:0;bottom:0;display:none;z-index:70;background:var(--pine-d);border-top:2px solid var(--sand)}.bar a{flex:1;text-align:center;padding:15px 8px;color:#fff;text-decoration:none;font-weight:700;font-size:.95rem}.bar a+a{border-left:1px solid rgba(255,255,255,.18)}@media (max-width:1060px){.menu{display:none}.ham{display:block}.mast-in{grid-template-columns:auto 1fr auto}.lede-in{grid-template-columns:1fr}.lede-txt{padding:46px 0 36px}.lede-pic{min-height:300px;margin:0 -24px}.stamp{left:14px;bottom:14px}.rail{grid-template-columns:1fr;gap:32px}.aside{position:static}.ask-grid{grid-template-columns:1fr;gap:28px}.strip .wrap{grid-template-columns:1fr 1fr}.strip div{border-bottom:1px solid var(--rule)}.foot-grid{grid-template-columns:1fr 1fr}}@media (max-width:640px){.logo img{width:170px}.call b{font-size:1.05rem}.call span{display:none}.bar{display:flex}body{padding-bottom:58px}.fset{grid-template-columns:1fr}.row{grid-template-columns:44px 1fr}.row .go{grid-column:2;align-self:start}.foot-grid{grid-template-columns:1fr}}@font-face{font-family:'Newsreader';font-style:normal;font-weight:500 700;font-display:optional;src:url(/fonts/newsreader-latin.woff2) format('woff2')}@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400 700;font-display:optional;src:url(/fonts/inter-tight-latin.woff2) format('woff2')}html{scrollbar-gutter:stable}.ribbon a{color:#eaf0ec;font-weight:600}.ribbon .ribbon-fine{color:#b9ccc2}.tray-h{display:block;padding:14px 0 4px;font:700 .74rem var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--sand-d)}.menu a[aria-current],.tray a[aria-current]{color:var(--pine)}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--sand);outline-offset:2px}.answer p strong:first-child{color:var(--pine)}.foot-logo{display:inline-block;background:#fff;border-radius:4px;padding:6px 10px}.foot-logo img{display:block;width:160px;height:auto}.foot-blurb{margin-top:14px;max-width:38ch}.foot-tel{margin-top:12px}.foot-tel a{font-size:1.25rem;font-weight:700}.foot-h{color:#fff;font-family:var(--fb);font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:14px;font-weight:700}.msg a{color:inherit;text-decoration:underline}.lede-pic img{background:#e9e6dc}.chart{margin:26px 0 30px;border:1px solid var(--rule);background:#fff;padding:20px 20px 14px}.chart svg{display:block;width:100%;max-width:660px;height:auto;font-family:var(--fb)}.chart figcaption{font-family:var(--fh);font-weight:700;color:var(--ink);font-size:1.15rem;line-height:1.3;margin-bottom:4px}.chart .sub{font-size:.92rem;color:var(--mute);margin:0 0 12px}.chart .src{font-size:.84rem;color:var(--mute);margin:12px 0 0;border-top:1px solid var(--rule);padding-top:10px}.chart details{margin-top:10px;font-size:.92rem}.chart details summary{cursor:pointer;color:var(--pine);font-weight:600}.chart .tbl{margin:10px 0 0}.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.86rem;color:var(--ink2);margin:0 0 8px;list-style:none}.legend li{display:flex;align-items:center;gap:7px}.legend i{display:inline-block;width:14px;height:10px;border-radius:2px}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin:22px 0}.kpis div{padding:18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:#fff}.kpis b{display:block;font-family:var(--fh);font-size:1.75rem;color:var(--pine);line-height:1.1}.kpis span{font-size:.9rem;color:var(--ink2)}.sources{font-size:.92rem;margin:10px 0 0 20px}.sources li{margin-bottom:8px}.callout{border-left:3px solid var(--sand);background:var(--wash);padding:16px 20px;margin:20px 0}.callout p:last-child{margin-bottom:0}.col table{font-size:.95rem}@media (max-width:640px){.chart{padding:12px 8px 10px;margin-left:-8px;margin-right:-8px}.kpis b{font-size:1.5rem}}.row-t{display:block;font-family:var(--fh);font-weight:700;font-size:1.2rem;color:var(--ink);line-height:1.2;margin-bottom:5px}@media (max-width:640px){.wrap{padding:0 16px}.lede-in{padding:0 16px}.lede-pic{margin:0 -16px}.mast-in{gap:10px;padding:10px 16px}.logo img{width:150px}.call b{white-space:nowrap;font-size:1rem}.tray{padding:8px 16px 18px}}.ask-grid>*,.fset>*{min-width:0}.fld input,.fld select,.fld textarea{min-width:0;max-width:100%}@media (max-width:1060px){.rail{grid-template-columns:minmax(0,1fr)}.col,.aside{min-width:0}}.heart-bar a{text-decoration:underline;text-underline-offset:3px}</style><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["HousePainter","LocalBusiness"],"@id":"https://bouldercopainters.com/#biz","name":"Boulder CO Painters","legalName":"Search Converts LLC","url":"https://bouldercopainters.com/","telephone":"+17202085645","email":"quote@painterhotline.com","logo":"https://bouldercopainters.com/images/boulder-co-painters-logo.png","image":"https://bouldercopainters.com/images/og-boulder-co-painters.jpg","description":"Painting company serving Boulder County, Colorado: interior and exterior house painting, historic and landmark homes, kitchen cabinet refinishing, deck and fence staining, zero-VOC work, rental turnovers, and commercial and HOA projects. Fully insured with a written 5-year workmanship warranty.","address":{"@type":"PostalAddress","addressLocality":"Boulder","addressRegion":"CO","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":40.015,"longitude":-105.2705},"areaServed":[{"@type":"AdministrativeArea","name":"Boulder County, Colorado"},{"@type":"Place","name":"Boulder, CO"},{"@type":"Place","name":"Longmont, CO"},{"@type":"Place","name":"Louisville, CO"},{"@type":"Place","name":"Lafayette, CO"},{"@type":"Place","name":"Superior, CO"},{"@type":"Place","name":"Erie, CO"},{"@type":"Place","name":"Niwot, CO"},{"@type":"Place","name":"Gunbarrel, CO"},{"@type":"Place","name":"Lyons, CO"},{"@type":"Place","name":"Nederland, CO"},{"@type":"Place","name":"Eldorado Springs, CO"},{"@type":"Place","name":"Jamestown, CO"},{"@type":"Place","name":"Ward, CO"}],"paymentAccepted":"Cash, Check, Credit Card","currenciesAccepted":"USD","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"19:00"}],"knowsAbout":["Boulder historic district Landmark Alteration Certificates","EPA Renovation, Repair and Painting rule","Lead-safe work practices","Zero-VOC coatings","High-altitude ultraviolet coating failure","Cabinet refinishing","Log and timber staining","HOA color approval"],"brand":[{"@type":"Brand","name":"Sherwin-Williams"},{"@type":"Brand","name":"PPG"},{"@type":"Brand","name":"Behr"}],"makesOffer":{"@type":"Offer","name":"25% off painting labor","description":"25% off painting projects booked by October 31, 2026. Labor only; paint and materials not included.","validFrom":"2026-10-01","validThrough":"2026-10-31","url":"https://bouldercopainters.com/get-an-estimate/"}},{"@type":"WebSite","@id":"https://bouldercopainters.com/#site","url":"https://bouldercopainters.com/","name":"Boulder CO Painters","publisher":{"@id":"https://bouldercopainters.com/#biz"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://bouldercopainters.com/boulder-painting-data/#page","url":"https://bouldercopainters.com/boulder-painting-data/","name":"Boulder Painting Data: Weather, Housing Age and Costs","description":"Boulder painting by the numbers: NOAA freeze dates and monthly lows, Census housing age by town, and sourced cost ranges, each with its source.","isPartOf":{"@id":"https://bouldercopainters.com/#site"},"about":{"@id":"https://bouldercopainters.com/#biz"},"inLanguage":"en-US","dateModified":"2026-10-15","speakable":{"@type":"SpeakableSpecification","cssSelector":[".answer"]},"breadcrumb":{"@id":"https://bouldercopainters.com/boulder-painting-data/#crumbs"}},{"@type":"BreadcrumbList","@id":"https://bouldercopainters.com/boulder-painting-data/#crumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bouldercopainters.com/"},{"@type":"ListItem","position":2,"name":"Boulder painting data","item":"https://bouldercopainters.com/boulder-painting-data/"}]},{"@type":"Dataset","@id":"https://bouldercopainters.com/boulder-painting-data/#data","url":"https://bouldercopainters.com/boulder-painting-data/","creator":{"@id":"https://bouldercopainters.com/#biz"},"dateModified":"2026-10-15","isAccessibleForFree":true,"name":"Boulder County painting conditions: climate normals and housing age","description":"Monthly temperature normals and freeze probability dates for the Boulder, Colorado weather station (NOAA 1991-2020), with housing age and tenure for Boulder County communities (U.S. Census Bureau ACS 2020-2024 5-year).","spatialCoverage":"Boulder County, Colorado","temporalCoverage":"1991/2024","license":"https://www.usa.gov/government-works","isBasedOn":["https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals","https://www.census.gov/programs-surveys/acs"]},{"@type":"FAQPage","@id":"https://bouldercopainters.com/boulder-painting-data/#faq","mainEntity":[{"@type":"Question","name":"Show the numbers as a tableNOAA 1991 to 2020 monthly normals, Boulder stationMonthAverage lowAverage highLow at or above 35°F?Low at or above 50°F?January21.5°F47.0°FNoNoFebruary22.3°F48.3°FNoNoMarch29.0°F57.0°FNoNoApril34.5°F62.8°FNoNoMay42.7°F71.3°FYesNoJune51.1°F82.5°FYesYesJuly57.0°F88.0°FYesYesAugust55.5°F86.0°FYesYesSeptember48.1°F78.8°FYesNoOctober37.2°F65.9°FYesNoNovember28.1°F54.5°FNoNoDecember21.1°F46.3°FNoNo What the chart says in plain terms: April averages a 34.5°F low, so April exterior work is a day-by-day gamble. May (42.7°F) opens the season for low-temperature products. Only June, July and August average above 50°F overnight, which is the real window for anything that needs it. September’s 48.1°F average low is why September feels perfect in the afternoon and still needs product chosen for cool nights. By October the average low is 37.2°F. 2. When the freezes actually come NOAA also publishes freeze probabilities for the station. They are more useful than an average date, because they tell you how much risk you are buying when you book early or late. Freeze risk calendar, Boulder stationClay marks the spring and fall stretches when the odds of a 32°F night run between 10% and 90%. Blue is the core of the season, when the odds are under 10%. Freeze risk calendar for BoulderSpring: 90 percent chance of a later freeze after April 24, 50 percent after May 6, 10 percent after May 18. Fall: 10 percent chance of a freeze by September 21, 50 percent by October 5, 90 percent by October 18.AprMayJunJulAugSepOctNovSpring freeze risk, April 24 to May 18Under 10 percent freeze risk, May 18 to September 21Fall freeze risk, September 21 to October 18Apr 24 to May 18Sep 21 to Oct 18Median May 6Median Oct 5Under 10% risk: about 126 daysClay: 10% to 90% freeze odds. Blue: under 10%. Source: NOAA NCEI U.S. Climate Normals 1991–2020, Boulder, CO (USC00050848), 32°F freeze probability dates. Median freeze-free season: 151 days. Show the numbers as a tableProbability dates for a 32°F freeze, Boulder stationProbabilityLast spring freeze on or afterFirst fall freeze on or before90%April 24October 1850% (median)May 6October 510%May 18September 21 The longer local record agrees. NOAA’s Physical Sciences Laboratory, which sits in Boulder, keeps a frost record for the city going back decades: across 1948 to 2025 the average last spring frost is May 5, the latest was June 3, 1951, and the average first fall frost since 1948 is October 6, with the earliest on September 8, 2020. Those are the two dates to remember when someone offers to start your exterior in mid-April or finish it at Halloween. Elevation moves all of this. The Boulder station sits at about 5,484 feet. Nederland is near 8,200 feet and Ward above 9,000, and the season up there is weeks shorter at both ends. See season and altitude for how we plan around it. 3. How old the houses are, town by town Housing age matters to a painter for two reasons. Homes built before 1978 fall under the federal lead rule whenever paid work disturbs painted surfaces, and older homes carry more trim, more layers and more wood that has been painted many times. The Census groups construction years by decade, so the cleanest cut it allows is “built before 1980”, which slightly overstates the pre-1978 count. Share of homes built before 1980All housing units, owner and renter. Gray bars are county and state references. Share of homes built before 1980 by Boulder County communityWard, Eldorado Springs and Jamestown are the oldest, above 79 percent. The city of Boulder is 55.4 percent and Gunbarrel 54.8 percent. Erie and Superior are under 5 percent. Boulder County overall is 41.6 percent.0%25%50%75%100%Ward: 92%Ward92%Eldorado Springs: 92%Eldorado Springs92%Jamestown: 80%Jamestown80%Boulder: 55%Boulder55%Gunbarrel: 55%Gunbarrel55%Nederland: 53%Nederland53%Niwot: 39%Niwot39%Longmont: 37%Longmont37%Lyons: 29%Lyons29%Lafayette: 22%Lafayette22%Louisville: 20%Louisville20%Erie: 5%Erie5%Superior: 5%Superior5%Boulder County: 42%Boulder County42%Colorado: 40%Colorado40% Source: U.S. Census Bureau, American Community Survey 2020–2024 5-year estimates, table B25034 (Year Structure Built). Small places carry wide margins of error. Show the numbers as a tableHousing by community, U.S. Census Bureau, American Community Survey 2020–2024 5-year estimates (tables B25034, B25003, B25077)PlaceHousing unitsBuilt before 1980Built 1939 or earlierRenter-occupiedMedian home valueBoulder47,46555.4%7.5%52.8%$1,039,500Longmont43,52837.1%4.8%37.5%$572,800Louisville8,49719.7%3.6%28.3%$883,900Lafayette12,93922.3%3.2%34.3%$686,500Superior5,2674.5%0.1%39.1%$903,900Erie11,9644.9%1.3%12.4%$736,500Niwot1,52639.4%0.8%22.7%$995,700Gunbarrel5,01754.8%0.6%36.9%$821,000Lyons76229%16.1%14.5%$845,400Nederland72953.1%17.6%27.3%$707,100Eldorado Springs *19991.5%23.1%0%$809,200Jamestown *15479.9%48.7%13.8%$595,900Ward *7692.1%61.8%6.7%$322,200Boulder County144,72941.6%5.9%38%$756,300Colorado2,589,05339.7%7%33.8%$539,400* Fewer than 200 homes, so the survey margins of error are wide. Treat those rows as rough. Boulder and Longmont are the cities; Niwot, Gunbarrel and Eldorado Springs are Census-designated places. The split is stark. Erie and Superior are mostly built since 1990, so lead almost never comes up there. The city of Boulder, Gunbarrel and Nederland are more than half pre-1980, and the canyon towns are older still. Read more on painting a pre-1978 home. 4. Who lives there: renters and owners More than half of the occupied homes in the city of Boulder are rented, the highest share in the county and well above the state. That is why so much of our Boulder calendar is lease-driven: move-out repaints, especially around University Hill in late summer. Share of occupied homes that are renter-occupiedGray bars are county and state references. Renter-occupied share of homes by Boulder County communityBoulder city is 52.8 percent renter-occupied, Longmont 37.5 percent and Gunbarrel 36.9 percent. Erie is 12.4 percent. Boulder County is 38 percent and Colorado 33.8 percent.0%15%30%45%60%Boulder: 53%Boulder53%Superior: 39%Superior39%Longmont: 38%Longmont38%Gunbarrel: 37%Gunbarrel37%Lafayette: 34%Lafayette34%Louisville: 28%Louisville28%Nederland: 27%Nederland27%Niwot: 23%Niwot23%Lyons: 15%Lyons15%Jamestown: 14%Jamestown14%Erie: 12%Erie12%Ward: 7%Ward7%Eldorado Springs: 0%Eldorado Springs0%Boulder County: 38%Boulder County38%Colorado: 34%Colorado34% Source: U.S. Census Bureau, American Community Survey 2020–2024 5-year estimates, table B25003 (Tenure). Eldorado Springs reports no renter-occupied units in the sample, which reflects its small size rather than a certainty. See rental turnover painting for how that calendar works in practice. 5. What published guides say painting costs We do not publish a price list, because two houses with the same floor area can need very different preparation. What we can do is show what independent cost guides report, name them, and date them. Published cost rangesThird-party estimates, not our prices. Read the dates. Published painting cost rangesHomeBlue reports Boulder exterior and interior painting at 1.30 to 3.10 dollars per square foot in 2022.$0$1.00$2.00$3.00$4.00Boulder exterior, per sq ft (2022): $1.30 to $3.10Boulder exterior, per sq ft (2022): $1.30 to $3.10Boulder interior, per sq ft (2022): $1.30 to $3.10Boulder interior, per sq ft (2022): $1.30 to $3.10 Painting cabinets versus replacing themFixr reports painting kitchen cabinets at 2,500 to 6,500 dollars nationally in 2026, and replacing cabinets at 6,250 to 15,000 dollars.$0$4k$8k$12k$16kPaint existing cabinets (2026): $2.5k to $6.5kPaint existing cabinets (2026): $2.5k to $6.5kReplace cabinets (2026): $6.25k to $15kReplace cabinets (2026): $6.25k to $15k Sources: HomeBlue, “Cost to Paint Exterior of House in Boulder, Colorado” and “Cost to Paint Interior of House in Boulder, Colorado” (published February 1, 2022; interior figure excludes materials). Fixr, “How Much Does It Cost to Paint Kitchen Cabinets?” (updated January 27, 2026; national figures). Show the numbers as a tablePublished cost ranges and their sourcesItemRangeSource and dateExterior painting, Boulder$1.30 to $3.10 per sq ftHomeBlue, Feb 2022Interior painting, Boulder$1.30 to $3.10 per sq ft plus materialHomeBlue, Feb 2022Painting kitchen cabinets$2,500 to $6,500 (national)Fixr, Jan 2026Replacing kitchen cabinets$6,250 to $15,000 (national)Fixr, Jan 2026 Two honest caveats. The Boulder figures are from 2022, and labor and material costs have risen since, so treat them as a floor for planning rather than a 2026 quote. And per-square-foot pricing hides the variables that actually decide a Boulder estimate: how much failing paint has to come off, how much trim there is, whether the house is pre-1978, and how hard the site is to stage. What painting costs walks through those. 6. What decides how long paint lasts here There is no honest single number for how often a Boulder house needs repainting. This ranking is our professional judgment from diagnosing failed coatings in Boulder County, set against manufacturer guidance. It is not a published statistic, and we label it that way on purpose. Coating-life factors, ranked by professional judgmentFactorEffect in BoulderCan you control it? Surface preparationThe largest single factor. Paint over chalk, dirt or failing coats fails early whatever the brand.Yes. It is the line to read on any estimate. Exposure directionSouth and west walls take the most sun and fail first.No, but you can specify better product there. Elevation and ultravioletThe World Health Organization puts the rise in UV at roughly 10% per 1,000 meters of altitude. Boulder sits about 1,650 meters up.No. MoistureSprinkler spray, gutter overflow and soil contact cause most of the early peeling we are called to look at.Yes, and usually cheaply. SubstrateFiber cement and masonry hold coatings longer than old wood or hardboard.Only when the siding is replaced. ColorSaturated reds and yellows fade faster than earth tones and neutrals.Yes, at selection. Coat count and product gradeFilm thickness is protection. Two proper coats of a premium line outlast one heavy coat of a cheap one.Yes. It should be in writing. Sources and method NOAA National Centers for Environmental Information, U.S. Climate Normals 1991–2020, monthly and annual/seasonal normals for station USC00050848 (Boulder, CO). The 1991–2020 set is the current release; NOAA updates normals once a decade. NOAA Physical Sciences Laboratory, Boulder last spring frost and first fall frost records (frost defined as a minimum of 32°F or lower). U.S. Census Bureau, American Community Survey 2020–2024 5-year estimates, tables B25034, B25003 and B25077, released December 2025. This is the most recent 5-year release; it replaces the 2019–2023 figures. Sherwin-Williams, Duration Exterior Acrylic Latex product information (application down to 35°F). World Health Organization, ultraviolet radiation guidance (UV rises by almost 10% per 1,000 meters of altitude). HomeBlue, exterior and interior painting cost guides for Boulder, CO (February 2022). Fixr, cost to paint kitchen cabinets (updated January 2026). Percentages are computed from the published Census counts. Nothing on this page is a projection or a survey we ran ourselves. If a source updates, this page gets updated and re-dated. Want this applied to your house?Send the address, the year it was built and a photo of each side. We will tell you which month it belongs in and what the preparation looks like, in writing.Start an estimate Straight answersQuestions about these figures When can exteriors be painted in Boulder?","acceptedAnswer":{"@type":"Answer","text":"For most products, from mid-May through September, with early May and early October workable only with low-temperature products and a good forecast. NOAA normals for the Boulder station put the median last spring freeze on May 6 and the median first fall freeze on October 5, and average lows reach 50°F only in June, July and August."}},{"@type":"Question","name":"How many Boulder homes are old enough for the lead rule?","acceptedAnswer":{"@type":"Answer","text":"The Census reports that 55.4% of housing units in the city of Boulder were built before 1980 (ACS 2020–2024). The federal rule covers homes built before 1978, so the true share is a little lower, but it is still more than half in the city and over 90% in Ward and Eldorado Springs."}},{"@type":"Question","name":"Why not publish your own prices?","acceptedAnswer":{"@type":"Answer","text":"Because a per-square-foot number would be wrong for most houses. Preparation, trim, access and the age of the paint drive a Boulder estimate far more than floor area. We show what independent guides report, with their dates, and give you a written estimate for the actual house."}},{"@type":"Question","name":"Where do the numbers come from?","acceptedAnswer":{"@type":"Answer","text":"Weather figures come from NOAA’s 1991–2020 climate normals for the Boulder station and the NOAA Physical Sciences Laboratory frost record. Housing figures come from the Census Bureau’s American Community Survey 2020–2024 5-year estimates. Cost ranges come from HomeBlue (2022) and Fixr (2026). Each source is listed with a link above."}}]}]}</script></head><body data-h1="Zm9ybQ==" data-h2="c3VibWl0LmNv" data-u1="aW4=" data-u2="Zm8=" data-d1="ZXlldG9hZA==" data-d2="LmNvbQ=="><a class="sr" href="#main">Skip to content</a><div class="ribbon" data-offer><div class="wrap"><span><b>25% off painting booked by October 31, 2026</b></span><span class="ribbon-fine">Labor only. Paint and materials not included.</span><a href="/get-an-estimate/">Book it &rarr;</a></div></div><header class="mast"><div class="mast-in"><a class="logo" href="/"><img src="/images/logo-480.webp" alt="Boulder CO Painters" width="240" height="120" fetchpriority="high" decoding="async"></a><nav class="menu" aria-label="Main"><div class="pop"><button type="button" aria-expanded="false">What we paint</button><div class="pop-list"><a href="/interior-house-painting/">Interior house painting</a><a href="/exterior-house-painting/">Exterior house painting</a><a href="/historic-home-painting/">Historic &amp; landmark homes</a><a href="/kitchen-cabinet-refinishing/">Kitchen cabinet refinishing</a><a href="/deck-and-fence-staining/">Deck &amp; fence staining</a><a href="/zero-voc-painting/">Zero-VOC &amp; healthy-home</a><a href="/rental-turnover-painting/">Rental turnovers</a><a href="/commercial-and-hoa-painting/">Commercial &amp; HOA</a></div></div><div class="pop"><button type="button" aria-expanded="false">Before you hire</button><div class="pop-list"><a href="/what-painting-costs-in-boulder/">What painting costs</a><a href="/boulder-painting-data/" aria-current="page">Boulder painting data</a><a href="/painting-season-and-altitude/">Season &amp; altitude</a><a href="/lead-safe-painting-older-homes/">Pre-1978 homes &amp; lead</a><a href="/boulder-color-guide/">Color guide</a><a href="/paint-sheen-guide/">Paint sheen guide</a><a href="/our-warranty/">The 5-year warranty</a><a href="/questions/">Questions</a></div></div><a href="/where-we-work/">Where we work</a><a href="/boulder-neighborhoods/">Neighborhoods</a><a href="/who-we-are/">Who we are</a><a href="/get-an-estimate/">Get an estimate</a></nav><a class="call" href="tel:+17202085645"><b>720-208-5645</b><span>Boulder County</span></a><button class="ham" id="ham" type="button" aria-label="Open menu" aria-controls="tray" aria-expanded="false"><span></span><span></span><span></span></button></div><nav class="tray" id="tray" aria-label="Mobile"><a href="/">Home</a><span class="tray-h">What we paint</span><a class="sub" href="/interior-house-painting/">Interior house painting</a><a class="sub" href="/exterior-house-painting/">Exterior house painting</a><a class="sub" href="/historic-home-painting/">Historic &amp; landmark homes</a><a class="sub" href="/kitchen-cabinet-refinishing/">Kitchen cabinet refinishing</a><a class="sub" href="/deck-and-fence-staining/">Deck &amp; fence staining</a><a class="sub" href="/zero-voc-painting/">Zero-VOC &amp; healthy-home</a><a class="sub" href="/rental-turnover-painting/">Rental turnovers</a><a class="sub" href="/commercial-and-hoa-painting/">Commercial &amp; HOA</a><span class="tray-h">Before you hire</span><a class="sub" href="/what-painting-costs-in-boulder/">What painting costs</a><a class="sub" href="/boulder-painting-data/" aria-current="page">Boulder painting data</a><a class="sub" href="/painting-season-and-altitude/">Season &amp; altitude</a><a class="sub" href="/lead-safe-painting-older-homes/">Pre-1978 homes &amp; lead</a><a class="sub" href="/boulder-color-guide/">Color guide</a><a class="sub" href="/paint-sheen-guide/">Paint sheen guide</a><a class="sub" href="/our-warranty/">The 5-year warranty</a><a class="sub" href="/questions/">Questions</a><a href="/where-we-work/">Where we work</a><a href="/boulder-neighborhoods/">Neighborhoods</a><a href="/who-we-are/">Who we are</a><a href="/get-an-estimate/">Get an estimate</a></nav></header><main id="main"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Boulder painting data</nav></div>
+<section class="sheet" style="padding-bottom:24px"><div class="wrap">
+<span class="kicker">Updated October 15, 2026</span>
+<h1>Boulder painting, by the numbers.</h1>
+<p class="dek">The weather window, the age of the houses and what published guides say painting costs, each figure tied to the agency or publisher it came from. No round numbers invented to fill a chart.</p>
+<div class="answer"><p><strong>Direct answer:</strong> At the Boulder weather station the median last spring freeze is May 6 and the median first fall freeze is October 5 (NOAA 1991&ndash;2020 normals), and the average overnight low clears 50&deg;F only in June, July and August. 55.4% of homes in the city of Boulder were built before 1980 (U.S. Census Bureau, American Community Survey 2020&ndash;2024 5-year estimates), so lead-safe preparation is the normal case here, not the exception. Third-party cost guides put Boulder house painting at roughly $1.30 to $3.10 per square foot (HomeBlue, 2022), and painting a kitchen&rsquo;s cabinets at $2,500 to $6,500 nationally (Fixr, 2026).</p></div>
+<div class="kpis">
+<div><b>May 6</b><span>median last spring freeze, Boulder station</span></div>
+<div><b>Oct 5</b><span>median first fall freeze</span></div>
+<div><b>138</b><span>nights a year at or below 32&deg;F, on average</span></div>
+<div><b>55.4%</b><span>of Boulder homes built before 1980</span></div>
+<div><b>52.8%</b><span>of occupied Boulder homes are rented</span></div>
+</div>
+</div></section>
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--fu);font-weight:700;font-size:1rem;text-decoration:none;border-radius:6px;padding:15px 24px;border:2px solid transparent;cursor:pointer;transition:transform .16s,background .16s,color .16s,border-color .16s;line-height:1.1}
-.btn:hover{transform:translateY(-2px)}
-.btn svg{width:17px;height:17px;flex-shrink:0}
-.btn-call{background:var(--orange-ink);color:#fff}
-.btn-call:hover{background:#94400a}
-.btn-blue{background:var(--blue);color:#fff}
-.btn-blue:hover{background:#0a4fae}
-.btn-sun{background:var(--sun);color:#3a2b00}
-.deep a.btn-sun,.deep .btn-sun{color:#3a2b00}
-.deep a.btn-call,.deep .btn-call{color:#fff}
-.deep a.btn-out,.deep .btn-out{color:var(--blue-deep)}
-.btn-sun:hover{background:#f0b61f}
-.btn-out{background:#fff;color:var(--blue-deep);border-color:var(--blue-deep)}
-.btn-out:hover{background:var(--blue-deep);color:#fff}
-.btn-ghost{background:#fff;color:var(--blue-ink);border-color:#bcd3ee}
-.btn-ghost:hover{background:var(--paper)}
-.deep .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
-.btn-ghost:hover{background:#fff;color:var(--blue-deep)}
+<section class="sheet" style="padding-top:24px"><div class="wrap"><div class="rail"><div class="col">
+<h2>1. The month-by-month painting window</h2>
+<p>Exterior coatings care about the overnight low more than the afternoon high, because the film keeps curing after the crew leaves. Sherwin-Williams, for example, rates Duration Exterior for application down to 35&deg;F and tells painters not to apply it when the temperature may fall below 35&deg;F within 48 hours. Many standard lines and most stains, caulks and primers still ask for 50&deg;F. Set those two lines against Boulder&rsquo;s own normals and the calendar draws itself.</p>
+<figure class="chart"><figcaption>Average daily low and high, by month</figcaption><p class="sub">Bars run from the average low to the average high; the clay dot and number mark the low. Dashed lines mark 50&deg;F, the minimum on many standard labels, and 35&deg;F, the floor for low-temperature exterior lines. Darker bars are months whose average low clears each line.</p>
+<svg viewBox="0 0 440 300" role="img" aria-labelledby="c1t c1d"><title id="c1t">Boulder average daily low and high by month</title><desc id="c1d">Average lows stay below 35 degrees from November through April, reach 42.7 in May, and clear 50 degrees only in June, July and August. Average highs run from 46 in December to 88 in July.</desc><line x1="34" x2="400" y1="236.35294117647058" y2="236.35294117647058" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="240.35294117647058" text-anchor="end" font-size="13" fill="#5f6b78">20°</text><line x1="34" x2="400" y1="206.70588235294116" y2="206.70588235294116" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="210.70588235294116" text-anchor="end" font-size="13" fill="#5f6b78">30°</text><line x1="34" x2="400" y1="177.05882352941177" y2="177.05882352941177" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="181.05882352941177" text-anchor="end" font-size="13" fill="#5f6b78">40°</text><line x1="34" x2="400" y1="147.41176470588235" y2="147.41176470588235" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="151.41176470588235" text-anchor="end" font-size="13" fill="#5f6b78">50°</text><line x1="34" x2="400" y1="117.76470588235293" y2="117.76470588235293" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="121.76470588235293" text-anchor="end" font-size="13" fill="#5f6b78">60°</text><line x1="34" x2="400" y1="88.11764705882351" y2="88.11764705882351" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="92.11764705882351" text-anchor="end" font-size="13" fill="#5f6b78">70°</text><line x1="34" x2="400" y1="58.470588235294116" y2="58.470588235294116" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="62.470588235294116" text-anchor="end" font-size="13" fill="#5f6b78">80°</text><line x1="34" x2="400" y1="28.823529411764696" y2="28.823529411764696" stroke="#dfe3e0" stroke-width="1"/><text x="26" y="32.823529411764696" text-anchor="end" font-size="13" fill="#5f6b78">90°</text><line x1="34" x2="404" y1="147.41176470588235" y2="147.41176470588235" stroke="#161c24" stroke-width="1.5" stroke-dasharray="5 4"/><text x="438" y="151.41176470588235" text-anchor="end" font-size="13" font-weight="700" fill="#161c24">50°F</text><line x1="34" x2="404" y1="191.88235294117646" y2="191.88235294117646" stroke="#161c24" stroke-width="1.5" stroke-dasharray="5 4"/><text x="438" y="195.88235294117646" text-anchor="end" font-size="13" font-weight="700" fill="#161c24">35°F</text><g><title>January: average low 21.5°F, average high 47°F</title><rect x="42.25" y="156.30588235294118" width="14" height="75.6" rx="4" fill="#c9d6e3"/><circle cx="49.25" cy="231.90588235294118" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="49.25" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Jan</text><text x="49.25" y="250.90588235294118" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">21.5</text></g><g><title>February: average low 22.3°F, average high 48.3°F</title><rect x="72.75" y="152.45176470588234" width="14" height="77.08235294117648" rx="4" fill="#c9d6e3"/><circle cx="79.75" cy="229.53411764705882" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="79.75" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Feb</text><text x="79.75" y="248.53411764705882" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">22.3</text></g><g><title>March: average low 29°F, average high 57°F</title><rect x="103.25" y="126.65882352941176" width="14" height="83.01176470588234" rx="4" fill="#c9d6e3"/><circle cx="110.25" cy="209.6705882352941" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="110.25" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Mar</text><text x="110.25" y="228.6705882352941" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">29.0</text></g><g><title>April: average low 34.5°F, average high 62.8°F</title><rect x="133.75" y="109.46352941176474" width="14" height="83.90117647058821" rx="4" fill="#c9d6e3"/><circle cx="140.75" cy="193.36470588235295" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="140.75" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Apr</text><text x="140.75" y="212.36470588235295" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">34.5</text></g><g><title>May: average low 42.7°F, average high 71.3°F</title><rect x="164.25" y="84.2635294117647" width="14" height="84.79058823529411" rx="4" fill="#6f9fcf"/><circle cx="171.25" cy="169.0541176470588" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="171.25" y="284" text-anchor="middle" font-size="13" fill="#3d4854">May</text><text x="171.25" y="188.0541176470588" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">42.7</text></g><g><title>June: average low 51.1°F, average high 82.5°F</title><rect x="194.75" y="51.05882352941177" width="14" height="93.09176470588235" rx="4" fill="#1565a8"/><circle cx="201.75" cy="144.15058823529412" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="201.75" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Jun</text><text x="201.75" y="163.15058823529412" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">51.1</text></g><g><title>July: average low 57°F, average high 88°F</title><rect x="225.25" y="34.752941176470586" width="14" height="91.90588235294118" rx="4" fill="#1565a8"/><circle cx="232.25" cy="126.65882352941176" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="232.25" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Jul</text><text x="232.25" y="145.65882352941176" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">57.0</text></g><g><title>August: average low 55.5°F, average high 86°F</title><rect x="255.75" y="40.68235294117645" width="14" height="90.42352941176475" rx="4" fill="#1565a8"/><circle cx="262.75" cy="131.1058823529412" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="262.75" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Aug</text><text x="262.75" y="150.1058823529412" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">55.5</text></g><g><title>September: average low 48.1°F, average high 78.8°F</title><rect x="286.25" y="62.02823529411768" width="14" height="91.01647058823528" rx="4" fill="#6f9fcf"/><circle cx="293.25" cy="153.04470588235296" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="293.25" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Sep</text><text x="293.25" y="172.04470588235296" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">48.1</text></g><g><title>October: average low 37.2°F, average high 65.9°F</title><rect x="316.75" y="100.27294117647057" width="14" height="85.08705882352945" rx="4" fill="#6f9fcf"/><circle cx="323.75" cy="185.36" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="323.75" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Oct</text><text x="323.75" y="204.36" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">37.2</text></g><g><title>November: average low 28.1°F, average high 54.5°F</title><rect x="347.25" y="134.0705882352941" width="14" height="78.26823529411766" rx="4" fill="#c9d6e3"/><circle cx="354.25" cy="212.33882352941177" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="354.25" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Nov</text><text x="354.25" y="231.33882352941177" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">28.1</text></g><g><title>December: average low 21.1°F, average high 46.3°F</title><rect x="377.75" y="158.38117647058823" width="14" height="74.71058823529413" rx="4" fill="#c9d6e3"/><circle cx="384.75" cy="233.09176470588235" r="5" fill="#b0652a" stroke="#fff" stroke-width="2"/><text x="384.75" y="284" text-anchor="middle" font-size="13" fill="#3d4854">Dec</text><text x="384.75" y="252.09176470588235" text-anchor="middle" font-size="12" fill="#3d4854" font-weight="600">21.1</text></g></svg>
+<p class="src">Source: NOAA National Centers for Environmental Information, U.S. Climate Normals 1991&ndash;2020, station Boulder, CO (USC00050848, elevation 5,484 ft). Thresholds: Sherwin-Williams Duration Exterior product information (35&deg;F); 50&deg;F is the minimum printed on many standard exterior labels. Your product&rsquo;s own data sheet governs.</p>
+<details><summary>Show the numbers as a table</summary><div class="tbl"><table><caption>NOAA 1991 to 2020 monthly normals, Boulder station</caption><thead><tr><th scope="col">Month</th><th scope="col">Average low</th><th scope="col">Average high</th><th scope="col">Low at or above 35°F?</th><th scope="col">Low at or above 50°F?</th></tr></thead><tbody><tr><th scope="row">January</th><td>21.5°F</td><td>47.0°F</td><td>No</td><td>No</td></tr><tr><th scope="row">February</th><td>22.3°F</td><td>48.3°F</td><td>No</td><td>No</td></tr><tr><th scope="row">March</th><td>29.0°F</td><td>57.0°F</td><td>No</td><td>No</td></tr><tr><th scope="row">April</th><td>34.5°F</td><td>62.8°F</td><td>No</td><td>No</td></tr><tr><th scope="row">May</th><td>42.7°F</td><td>71.3°F</td><td>Yes</td><td>No</td></tr><tr><th scope="row">June</th><td>51.1°F</td><td>82.5°F</td><td>Yes</td><td>Yes</td></tr><tr><th scope="row">July</th><td>57.0°F</td><td>88.0°F</td><td>Yes</td><td>Yes</td></tr><tr><th scope="row">August</th><td>55.5°F</td><td>86.0°F</td><td>Yes</td><td>Yes</td></tr><tr><th scope="row">September</th><td>48.1°F</td><td>78.8°F</td><td>Yes</td><td>No</td></tr><tr><th scope="row">October</th><td>37.2°F</td><td>65.9°F</td><td>Yes</td><td>No</td></tr><tr><th scope="row">November</th><td>28.1°F</td><td>54.5°F</td><td>No</td><td>No</td></tr><tr><th scope="row">December</th><td>21.1°F</td><td>46.3°F</td><td>No</td><td>No</td></tr></tbody></table></div></details></figure>
+<p>What the chart says in plain terms: April averages a 34.5&deg;F low, so April exterior work is a day-by-day gamble. May (42.7&deg;F) opens the season for low-temperature products. Only June, July and August average above 50&deg;F overnight, which is the real window for anything that needs it. September&rsquo;s 48.1&deg;F average low is why September feels perfect in the afternoon and still needs product chosen for cool nights. By October the average low is 37.2&deg;F.</p>
 
-.alertbar{background:var(--blue-deep);color:#fff;font-size:.92rem;padding:9px 0}
-.alertbar .wrap{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;text-align:center}
-.alertbar b{color:var(--sun)}
-.alertbar a{color:#fff;font-weight:700}
-.alertbar .fine{color:rgba(255,255,255,.66);font-size:.8rem}
+<h2>2. When the freezes actually come</h2>
+<p>NOAA also publishes freeze probabilities for the station. They are more useful than an average date, because they tell you how much risk you are buying when you book early or late.</p>
+<figure class="chart"><figcaption>Freeze risk calendar, Boulder station</figcaption><p class="sub">Clay marks the spring and fall stretches when the odds of a 32&deg;F night run between 10% and 90%. Blue is the core of the season, when the odds are under 10%.</p>
+<svg viewBox="0 0 440 200" role="img" aria-labelledby="c2t c2d"><title id="c2t">Freeze risk calendar for Boulder</title><desc id="c2d">Spring: 90 percent chance of a later freeze after April 24, 50 percent after May 6, 10 percent after May 18. Fall: 10 percent chance of a freeze by September 21, 50 percent by October 5, 90 percent by October 18.</desc><line x1="8" x2="8" y1="40" y2="150" stroke="#dfe3e0"/><text x="12" y="170" font-size="13" fill="#5f6b78">Apr</text><line x1="63.78947368421052" x2="63.78947368421052" y1="40" y2="150" stroke="#dfe3e0"/><text x="67.78947368421052" y="170" font-size="13" fill="#5f6b78">May</text><line x1="121.43859649122807" x2="121.43859649122807" y1="40" y2="150" stroke="#dfe3e0"/><text x="125.43859649122807" y="170" font-size="13" fill="#5f6b78">Jun</text><line x1="177.2280701754386" x2="177.2280701754386" y1="40" y2="150" stroke="#dfe3e0"/><text x="181.2280701754386" y="170" font-size="13" fill="#5f6b78">Jul</text><line x1="234.87719298245614" x2="234.87719298245614" y1="40" y2="150" stroke="#dfe3e0"/><text x="238.87719298245614" y="170" font-size="13" fill="#5f6b78">Aug</text><line x1="292.5263157894737" x2="292.5263157894737" y1="40" y2="150" stroke="#dfe3e0"/><text x="296.5263157894737" y="170" font-size="13" fill="#5f6b78">Sep</text><line x1="348.3157894736842" x2="348.3157894736842" y1="40" y2="150" stroke="#dfe3e0"/><text x="352.3157894736842" y="170" font-size="13" fill="#5f6b78">Oct</text><line x1="405.96491228070175" x2="405.96491228070175" y1="40" y2="150" stroke="#dfe3e0"/><text x="409.96491228070175" y="170" font-size="13" fill="#5f6b78">Nov</text><rect x="50.771929824561404" y="70" width="44.63157894736842" height="44" rx="4" fill="#b0652a" opacity=".85"><title>Spring freeze risk, April 24 to May 18</title></rect><rect x="97.40350877192982" y="70" width="230.31578947368422" height="44" rx="4" fill="#1565a8"><title>Under 10 percent freeze risk, May 18 to September 21</title></rect><rect x="329.719298245614" y="70" width="50.21052631578948" height="44" rx="4" fill="#b0652a" opacity=".85"><title>Fall freeze risk, September 21 to October 18</title></rect><text x="73.08771929824562" y="60" text-anchor="middle" font-size="13" font-weight="600" fill="#161c24">Apr 24 to May 18</text><text x="353.89473684210526" y="60" text-anchor="middle" font-size="13" font-weight="600" fill="#161c24">Sep 21 to Oct 18</text><line x1="73.08771929824562" x2="73.08771929824562" y1="114" y2="128" stroke="#161c24" stroke-width="1.5"/><text x="73.08771929824562" y="142" text-anchor="middle" font-size="13" fill="#161c24" font-weight="600">Median May 6</text><line x1="355.7543859649123" x2="355.7543859649123" y1="114" y2="128" stroke="#161c24" stroke-width="1.5"/><text x="355.7543859649123" y="142" text-anchor="middle" font-size="13" fill="#161c24" font-weight="600">Median Oct 5</text><text x="212.56140350877192" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Under 10% risk: about 126 days</text><text x="8" y="22" font-size="13" fill="#3d4854">Clay: 10% to 90% freeze odds. Blue: under 10%.</text></svg>
+<p class="src">Source: NOAA NCEI U.S. Climate Normals 1991&ndash;2020, Boulder, CO (USC00050848), 32&deg;F freeze probability dates. Median freeze-free season: 151 days.</p>
+<details><summary>Show the numbers as a table</summary><div class="tbl"><table><caption>Probability dates for a 32&deg;F freeze, Boulder station</caption><thead><tr><th scope="col">Probability</th><th scope="col">Last spring freeze on or after</th><th scope="col">First fall freeze on or before</th></tr></thead><tbody><tr><th scope="row">90%</th><td>April 24</td><td>October 18</td></tr><tr><th scope="row">50% (median)</th><td>May 6</td><td>October 5</td></tr><tr><th scope="row">10%</th><td>May 18</td><td>September 21</td></tr></tbody></table></div></details></figure>
+<p>The longer local record agrees. NOAA&rsquo;s Physical Sciences Laboratory, which sits in Boulder, keeps a frost record for the city going back decades: across 1948 to 2025 the average last spring frost is May 5, the latest was June 3, 1951, and the average first fall frost since 1948 is October 6, with the earliest on September 8, 2020. Those are the two dates to remember when someone offers to start your exterior in mid-April or finish it at Halloween.</p>
+<p>Elevation moves all of this. The Boulder station sits at about 5,484 feet. Nederland is near 8,200 feet and Ward above 9,000, and the season up there is weeks shorter at both ends. See <a href="/painting-season-and-altitude/">season and altitude</a> for how we plan around it.</p>
 
-.site-head{position:sticky;top:0;z-index:900;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(18,32,51,.07)}
-.head-in{max-width:1340px;margin:0 auto;padding:9px 18px;display:flex;align-items:center;gap:12px}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
-.brand img{height:84px;width:auto;transition:height .22s}
-.site-head.tight .brand img{height:56px}
-.brand .bn{font-family:var(--fd);font-weight:700;font-size:1.22rem;color:var(--blue-deep);line-height:1.05}
-.brand .bn span{display:block;font-family:var(--fu);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink);font-weight:700}
-.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
-.nav a,.drop-btn{font-family:var(--fu);font-weight:600;font-size:.9rem;color:var(--ink);text-decoration:none;padding:9px 8px;border-radius:5px;background:none;border:0;cursor:pointer;white-space:nowrap}
-.nav a:hover,.drop-btn:hover,.nav a[aria-current="page"],.drop-btn[data-cur]{color:var(--orange-ink);background:var(--paper)}
-.drop{position:relative}
-.drop-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-top:3px solid var(--orange);border-radius:0 0 8px 8px;box-shadow:0 20px 42px rgba(18,32,51,.16);min-width:250px;padding:6px;z-index:950}
-.drop:hover .drop-menu,.drop:focus-within .drop-menu,.drop.open .drop-menu{display:block}
-.nav .drop-menu a{display:block;padding:10px 12px;white-space:nowrap;font-weight:500}
-.ringer{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
-.ringer .ic{width:38px;height:38px;border-radius:9px;background:var(--orange);color:#fff;display:grid;place-items:center;flex-shrink:0}
-.ringer .ic svg{width:19px;height:19px}
-.ringer b{display:block;font-weight:800;font-size:1.18rem;letter-spacing:-.02em;white-space:nowrap;font-family:var(--fu)}
-.ringer i{display:block;font-style:normal;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-ink)}
-.head-cta{padding:12px 16px;font-size:.92rem}
-.burger{display:none;background:#fff;border:2px solid var(--blue-deep);border-radius:6px;color:var(--blue-deep);font-weight:700;padding:9px 12px;cursor:pointer;font-family:var(--fu)}
-.tray{display:none;background:#fff;border-top:1px solid var(--line);padding:4px 22px 18px}
-.tray.open{display:block}
-.tray a{display:block;color:var(--ink);text-decoration:none;font-weight:600;padding:12px 0;border-bottom:1px solid var(--line)}
-.tray .sub{padding-left:14px;font-weight:500;font-size:.95rem;color:var(--muted)}
+<h2>3. How old the houses are, town by town</h2>
+<p>Housing age matters to a painter for two reasons. Homes built before 1978 fall under the federal lead rule whenever paid work disturbs painted surfaces, and older homes carry more trim, more layers and more wood that has been painted many times. The Census groups construction years by decade, so the cleanest cut it allows is &ldquo;built before 1980&rdquo;, which slightly overstates the pre-1978 count.</p>
+<figure class="chart"><figcaption>Share of homes built before 1980</figcaption><p class="sub">All housing units, owner and renter. Gray bars are county and state references.</p>
+<svg viewBox="0 0 440 456" role="img" aria-labelledby="c3t c3d"><title id="c3t">Share of homes built before 1980 by Boulder County community</title><desc id="c3d">Ward, Eldorado Springs and Jamestown are the oldest, above 79 percent. The city of Boulder is 55.4 percent and Gunbarrel 54.8 percent. Erie and Superior are under 5 percent. Boulder County overall is 41.6 percent.</desc><line x1="116" x2="116" y1="6" y2="430" stroke="#dfe3e0"/><text x="116" y="448" text-anchor="start" font-size="13" fill="#5f6b78">0%</text><line x1="185.5" x2="185.5" y1="6" y2="430" stroke="#dfe3e0"/><text x="185.5" y="448" text-anchor="middle" font-size="13" fill="#5f6b78">25%</text><line x1="255" x2="255" y1="6" y2="430" stroke="#dfe3e0"/><text x="255" y="448" text-anchor="middle" font-size="13" fill="#5f6b78">50%</text><line x1="324.5" x2="324.5" y1="6" y2="430" stroke="#dfe3e0"/><text x="324.5" y="448" text-anchor="middle" font-size="13" fill="#5f6b78">75%</text><line x1="394" x2="394" y1="6" y2="430" stroke="#dfe3e0"/><text x="394" y="448" text-anchor="end" font-size="13" fill="#5f6b78">100%</text><g><title>Ward: 92%</title><text x="106" y="25" text-anchor="end" font-size="13" fill="#161c24">Ward</text><rect x="116" y="12" width="256.03799999999995" height="18" rx="4" fill="#20483a"/><text x="378.03799999999995" y="25" font-size="13" font-weight="600" fill="#161c24">92%</text></g><g><title>Eldorado Springs: 92%</title><text x="106" y="53" text-anchor="end" font-size="13" fill="#161c24">Eldorado Springs</text><rect x="116" y="40" width="254.37" height="18" rx="4" fill="#20483a"/><text x="376.37" y="53" font-size="13" font-weight="600" fill="#161c24">92%</text></g><g><title>Jamestown: 80%</title><text x="106" y="81" text-anchor="end" font-size="13" fill="#161c24">Jamestown</text><rect x="116" y="68" width="222.122" height="18" rx="4" fill="#20483a"/><text x="344.122" y="81" font-size="13" font-weight="600" fill="#161c24">80%</text></g><g><title>Boulder: 55%</title><text x="106" y="109" text-anchor="end" font-size="13" fill="#161c24">Boulder</text><rect x="116" y="96" width="154.01199999999994" height="18" rx="4" fill="#20483a"/><text x="276.01199999999994" y="109" font-size="13" font-weight="600" fill="#161c24">55%</text></g><g><title>Gunbarrel: 55%</title><text x="106" y="137" text-anchor="end" font-size="13" fill="#161c24">Gunbarrel</text><rect x="116" y="124" width="152.344" height="18" rx="4" fill="#20483a"/><text x="274.344" y="137" font-size="13" font-weight="600" fill="#161c24">55%</text></g><g><title>Nederland: 53%</title><text x="106" y="165" text-anchor="end" font-size="13" fill="#161c24">Nederland</text><rect x="116" y="152" width="147.618" height="18" rx="4" fill="#20483a"/><text x="269.618" y="165" font-size="13" font-weight="600" fill="#161c24">53%</text></g><g><title>Niwot: 39%</title><text x="106" y="193" text-anchor="end" font-size="13" fill="#161c24">Niwot</text><rect x="116" y="180" width="109.53199999999998" height="18" rx="4" fill="#20483a"/><text x="231.53199999999998" y="193" font-size="13" font-weight="600" fill="#161c24">39%</text></g><g><title>Longmont: 37%</title><text x="106" y="221" text-anchor="end" font-size="13" fill="#161c24">Longmont</text><rect x="116" y="208" width="103.138" height="18" rx="4" fill="#20483a"/><text x="225.138" y="221" font-size="13" font-weight="600" fill="#161c24">37%</text></g><g><title>Lyons: 29%</title><text x="106" y="249" text-anchor="end" font-size="13" fill="#161c24">Lyons</text><rect x="116" y="236" width="80.62" height="18" rx="4" fill="#20483a"/><text x="202.62" y="249" font-size="13" font-weight="600" fill="#161c24">29%</text></g><g><title>Lafayette: 22%</title><text x="106" y="277" text-anchor="end" font-size="13" fill="#161c24">Lafayette</text><rect x="116" y="264" width="61.994" height="18" rx="4" fill="#20483a"/><text x="183.994" y="277" font-size="13" font-weight="600" fill="#161c24">22%</text></g><g><title>Louisville: 20%</title><text x="106" y="305" text-anchor="end" font-size="13" fill="#161c24">Louisville</text><rect x="116" y="292" width="54.76599999999999" height="18" rx="4" fill="#20483a"/><text x="176.766" y="305" font-size="13" font-weight="600" fill="#161c24">20%</text></g><g><title>Erie: 5%</title><text x="106" y="333" text-anchor="end" font-size="13" fill="#161c24">Erie</text><rect x="116" y="320" width="13.622000000000014" height="18" rx="4" fill="#20483a"/><text x="135.622" y="333" font-size="13" font-weight="600" fill="#161c24">5%</text></g><g><title>Superior: 5%</title><text x="106" y="361" text-anchor="end" font-size="13" fill="#161c24">Superior</text><rect x="116" y="348" width="12.509999999999991" height="18" rx="4" fill="#20483a"/><text x="134.51" y="361" font-size="13" font-weight="600" fill="#161c24">5%</text></g><g><title>Boulder County: 42%</title><text x="106" y="389" text-anchor="end" font-size="13" fill="#161c24" font-style="italic">Boulder County</text><rect x="116" y="376" width="115.64800000000002" height="18" rx="4" fill="#8a96a3"/><text x="237.64800000000002" y="389" font-size="13" font-weight="600" fill="#161c24">42%</text></g><g><title>Colorado: 40%</title><text x="106" y="417" text-anchor="end" font-size="13" fill="#161c24" font-style="italic">Colorado</text><rect x="116" y="404" width="110.36599999999999" height="18" rx="4" fill="#8a96a3"/><text x="232.36599999999999" y="417" font-size="13" font-weight="600" fill="#161c24">40%</text></g></svg>
+<p class="src">Source: U.S. Census Bureau, American Community Survey 2020&ndash;2024 5-year estimates, table B25034 (Year Structure Built). Small places carry wide margins of error.</p>
+<details><summary>Show the numbers as a table</summary><div class="tbl"><table><caption>Housing by community, U.S. Census Bureau, American Community Survey 2020&ndash;2024 5-year estimates (tables B25034, B25003, B25077)</caption><thead><tr><th scope="col">Place</th><th scope="col">Housing units</th><th scope="col">Built before 1980</th><th scope="col">Built 1939 or earlier</th><th scope="col">Renter-occupied</th><th scope="col">Median home value</th></tr></thead><tbody><tr><th scope="row">Boulder</th><td>47,465</td><td>55.4%</td><td>7.5%</td><td>52.8%</td><td>$1,039,500</td></tr><tr><th scope="row">Longmont</th><td>43,528</td><td>37.1%</td><td>4.8%</td><td>37.5%</td><td>$572,800</td></tr><tr><th scope="row">Louisville</th><td>8,497</td><td>19.7%</td><td>3.6%</td><td>28.3%</td><td>$883,900</td></tr><tr><th scope="row">Lafayette</th><td>12,939</td><td>22.3%</td><td>3.2%</td><td>34.3%</td><td>$686,500</td></tr><tr><th scope="row">Superior</th><td>5,267</td><td>4.5%</td><td>0.1%</td><td>39.1%</td><td>$903,900</td></tr><tr><th scope="row">Erie</th><td>11,964</td><td>4.9%</td><td>1.3%</td><td>12.4%</td><td>$736,500</td></tr><tr><th scope="row">Niwot</th><td>1,526</td><td>39.4%</td><td>0.8%</td><td>22.7%</td><td>$995,700</td></tr><tr><th scope="row">Gunbarrel</th><td>5,017</td><td>54.8%</td><td>0.6%</td><td>36.9%</td><td>$821,000</td></tr><tr><th scope="row">Lyons</th><td>762</td><td>29%</td><td>16.1%</td><td>14.5%</td><td>$845,400</td></tr><tr><th scope="row">Nederland</th><td>729</td><td>53.1%</td><td>17.6%</td><td>27.3%</td><td>$707,100</td></tr><tr><th scope="row">Eldorado Springs *</th><td>199</td><td>91.5%</td><td>23.1%</td><td>0%</td><td>$809,200</td></tr><tr><th scope="row">Jamestown *</th><td>154</td><td>79.9%</td><td>48.7%</td><td>13.8%</td><td>$595,900</td></tr><tr><th scope="row">Ward *</th><td>76</td><td>92.1%</td><td>61.8%</td><td>6.7%</td><td>$322,200</td></tr><tr><th scope="row">Boulder County</th><td>144,729</td><td>41.6%</td><td>5.9%</td><td>38%</td><td>$756,300</td></tr><tr><th scope="row">Colorado</th><td>2,589,053</td><td>39.7%</td><td>7%</td><td>33.8%</td><td>$539,400</td></tr></tbody></table></div><p class="src">* Fewer than 200 homes, so the survey margins of error are wide. Treat those rows as rough. Boulder and Longmont are the cities; Niwot, Gunbarrel and Eldorado Springs are Census-designated places.</p></details></figure>
+<p>The split is stark. Erie and Superior are mostly built since 1990, so lead almost never comes up there. The city of Boulder, Gunbarrel and Nederland are more than half pre-1980, and the canyon towns are older still. Read more on <a href="/lead-safe-painting-older-homes/">painting a pre-1978 home</a>.</p>
 
-.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;transition:transform .18s,box-shadow .18s}
-.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(18,32,51,.1)}
-.card h3{margin-bottom:7px}
-.card p{color:var(--muted);font-size:.97rem}
-.deep .card{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
-.deep .card h3{color:#fff}.deep .card p{color:rgba(255,255,255,.85)}
-.card .n{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--orange);line-height:1}
-.pcard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;text-decoration:none}
-.pcard img{aspect-ratio:3/2;object-fit:cover;width:100%;transition:transform .4s}
-.pcard:hover img{transform:scale(1.04)}
-.pcard .b{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
-.pcard h3{font-size:1.14rem}
-.pcard p{color:var(--muted);font-size:.94rem;flex:1}
-.pcard .go{color:var(--orange-ink);font-weight:700;font-size:.93rem}
+<h2>4. Who lives there: renters and owners</h2>
+<p>More than half of the occupied homes in the city of Boulder are rented, the highest share in the county and well above the state. That is why so much of our Boulder calendar is lease-driven: move-out repaints, especially around University Hill in late summer.</p>
+<figure class="chart"><figcaption>Share of occupied homes that are renter-occupied</figcaption><p class="sub">Gray bars are county and state references.</p>
+<svg viewBox="0 0 440 456" role="img" aria-labelledby="c4t c4d"><title id="c4t">Renter-occupied share of homes by Boulder County community</title><desc id="c4d">Boulder city is 52.8 percent renter-occupied, Longmont 37.5 percent and Gunbarrel 36.9 percent. Erie is 12.4 percent. Boulder County is 38 percent and Colorado 33.8 percent.</desc><line x1="116" x2="116" y1="6" y2="430" stroke="#dfe3e0"/><text x="116" y="448" text-anchor="start" font-size="13" fill="#5f6b78">0%</text><line x1="185.5" x2="185.5" y1="6" y2="430" stroke="#dfe3e0"/><text x="185.5" y="448" text-anchor="middle" font-size="13" fill="#5f6b78">15%</text><line x1="255" x2="255" y1="6" y2="430" stroke="#dfe3e0"/><text x="255" y="448" text-anchor="middle" font-size="13" fill="#5f6b78">30%</text><line x1="324.5" x2="324.5" y1="6" y2="430" stroke="#dfe3e0"/><text x="324.5" y="448" text-anchor="middle" font-size="13" fill="#5f6b78">45%</text><line x1="394" x2="394" y1="6" y2="430" stroke="#dfe3e0"/><text x="394" y="448" text-anchor="end" font-size="13" fill="#5f6b78">60%</text><g><title>Boulder: 53%</title><text x="106" y="25" text-anchor="end" font-size="13" fill="#161c24">Boulder</text><rect x="116" y="12" width="244.64" height="18" rx="4" fill="#1565a8"/><text x="366.64" y="25" font-size="13" font-weight="600" fill="#161c24">53%</text></g><g><title>Superior: 39%</title><text x="106" y="53" text-anchor="end" font-size="13" fill="#161c24">Superior</text><rect x="116" y="40" width="181.16333333333336" height="18" rx="4" fill="#1565a8"/><text x="303.16333333333336" y="53" font-size="13" font-weight="600" fill="#161c24">39%</text></g><g><title>Longmont: 38%</title><text x="106" y="81" text-anchor="end" font-size="13" fill="#161c24">Longmont</text><rect x="116" y="68" width="173.75" height="18" rx="4" fill="#1565a8"/><text x="295.75" y="81" font-size="13" font-weight="600" fill="#161c24">38%</text></g><g><title>Gunbarrel: 37%</title><text x="106" y="109" text-anchor="end" font-size="13" fill="#161c24">Gunbarrel</text><rect x="116" y="96" width="170.97000000000003" height="18" rx="4" fill="#1565a8"/><text x="292.97" y="109" font-size="13" font-weight="600" fill="#161c24">37%</text></g><g><title>Lafayette: 34%</title><text x="106" y="137" text-anchor="end" font-size="13" fill="#161c24">Lafayette</text><rect x="116" y="124" width="158.9233333333333" height="18" rx="4" fill="#1565a8"/><text x="280.9233333333333" y="137" font-size="13" font-weight="600" fill="#161c24">34%</text></g><g><title>Louisville: 28%</title><text x="106" y="165" text-anchor="end" font-size="13" fill="#161c24">Louisville</text><rect x="116" y="152" width="131.12333333333333" height="18" rx="4" fill="#1565a8"/><text x="253.12333333333333" y="165" font-size="13" font-weight="600" fill="#161c24">28%</text></g><g><title>Nederland: 27%</title><text x="106" y="193" text-anchor="end" font-size="13" fill="#161c24">Nederland</text><rect x="116" y="180" width="126.49000000000001" height="18" rx="4" fill="#1565a8"/><text x="248.49" y="193" font-size="13" font-weight="600" fill="#161c24">27%</text></g><g><title>Niwot: 23%</title><text x="106" y="221" text-anchor="end" font-size="13" fill="#161c24">Niwot</text><rect x="116" y="208" width="105.17666666666668" height="18" rx="4" fill="#1565a8"/><text x="227.17666666666668" y="221" font-size="13" font-weight="600" fill="#161c24">23%</text></g><g><title>Lyons: 15%</title><text x="106" y="249" text-anchor="end" font-size="13" fill="#161c24">Lyons</text><rect x="116" y="236" width="67.18333333333334" height="18" rx="4" fill="#1565a8"/><text x="189.18333333333334" y="249" font-size="13" font-weight="600" fill="#161c24">15%</text></g><g><title>Jamestown: 14%</title><text x="106" y="277" text-anchor="end" font-size="13" fill="#161c24">Jamestown</text><rect x="116" y="264" width="63.94" height="18" rx="4" fill="#1565a8"/><text x="185.94" y="277" font-size="13" font-weight="600" fill="#161c24">14%</text></g><g><title>Erie: 12%</title><text x="106" y="305" text-anchor="end" font-size="13" fill="#161c24">Erie</text><rect x="116" y="292" width="57.45333333333332" height="18" rx="4" fill="#1565a8"/><text x="179.45333333333332" y="305" font-size="13" font-weight="600" fill="#161c24">12%</text></g><g><title>Ward: 7%</title><text x="106" y="333" text-anchor="end" font-size="13" fill="#161c24">Ward</text><rect x="116" y="320" width="31.043333333333322" height="18" rx="4" fill="#1565a8"/><text x="153.04333333333332" y="333" font-size="13" font-weight="600" fill="#161c24">7%</text></g><g><title>Eldorado Springs: 0%</title><text x="106" y="361" text-anchor="end" font-size="13" fill="#161c24">Eldorado Springs</text><rect x="116" y="348" width="2" height="18" rx="4" fill="#1565a8"/><text x="122" y="361" font-size="13" font-weight="600" fill="#161c24">0%</text></g><g><title>Boulder County: 38%</title><text x="106" y="389" text-anchor="end" font-size="13" fill="#161c24" font-style="italic">Boulder County</text><rect x="116" y="376" width="176.06666666666666" height="18" rx="4" fill="#8a96a3"/><text x="298.06666666666666" y="389" font-size="13" font-weight="600" fill="#161c24">38%</text></g><g><title>Colorado: 34%</title><text x="106" y="417" text-anchor="end" font-size="13" fill="#161c24" font-style="italic">Colorado</text><rect x="116" y="404" width="156.60666666666668" height="18" rx="4" fill="#8a96a3"/><text x="278.6066666666667" y="417" font-size="13" font-weight="600" fill="#161c24">34%</text></g></svg>
+<p class="src">Source: U.S. Census Bureau, American Community Survey 2020&ndash;2024 5-year estimates, table B25003 (Tenure). Eldorado Springs reports no renter-occupied units in the sample, which reflects its small size rather than a certainty.</p></figure>
+<p>See <a href="/rental-turnover-painting/">rental turnover painting</a> for how that calendar works in practice.</p>
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
-.stats div{padding:20px;border-right:1px solid var(--line)}
-.stats div:last-child{border-right:0}
-.stats b{display:block;font-family:var(--fd);font-size:1.45rem;color:var(--blue-deep)}
-.stats span{font-size:.9rem;color:var(--muted)}
+<h2>5. What published guides say painting costs</h2>
+<p>We do not publish a price list, because two houses with the same floor area can need very different preparation. What we can do is show what independent cost guides report, name them, and date them.</p>
+<figure class="chart"><figcaption>Published cost ranges</figcaption><p class="sub">Third-party estimates, not our prices. Read the dates.</p>
+<svg viewBox="0 0 440 124" role="img" aria-labelledby="c5t c5d"><title id="c5t">Published painting cost ranges</title><desc id="c5d">HomeBlue reports Boulder exterior and interior painting at 1.30 to 3.10 dollars per square foot in 2022.</desc><line x1="8" x2="8" y1="6" y2="98" stroke="#dfe3e0"/><text x="8" y="116" text-anchor="start" font-size="13" fill="#5f6b78">$0</text><line x1="114" x2="114" y1="6" y2="98" stroke="#dfe3e0"/><text x="114" y="116" text-anchor="middle" font-size="13" fill="#5f6b78">$1.00</text><line x1="220" x2="220" y1="6" y2="98" stroke="#dfe3e0"/><text x="220" y="116" text-anchor="middle" font-size="13" fill="#5f6b78">$2.00</text><line x1="326" x2="326" y1="6" y2="98" stroke="#dfe3e0"/><text x="326" y="116" text-anchor="middle" font-size="13" fill="#5f6b78">$3.00</text><line x1="432" x2="432" y1="6" y2="98" stroke="#dfe3e0"/><text x="432" y="116" text-anchor="end" font-size="13" fill="#5f6b78">$4.00</text><g><title>Boulder exterior, per sq ft (2022): $1.30 to $3.10</title><text x="8" y="18" font-size="13" fill="#161c24">Boulder exterior, per sq ft (2022): <tspan font-weight="700">$1.30 to $3.10</tspan></text><rect x="145.8" y="24" width="190.8" height="16" rx="4" fill="#1565a8"/></g><g><title>Boulder interior, per sq ft (2022): $1.30 to $3.10</title><text x="8" y="62" font-size="13" fill="#161c24">Boulder interior, per sq ft (2022): <tspan font-weight="700">$1.30 to $3.10</tspan></text><rect x="145.8" y="68" width="190.8" height="16" rx="4" fill="#b0652a"/></g></svg>
+<svg viewBox="0 0 440 124" role="img" aria-labelledby="c6t c6d"><title id="c6t">Painting cabinets versus replacing them</title><desc id="c6d">Fixr reports painting kitchen cabinets at 2,500 to 6,500 dollars nationally in 2026, and replacing cabinets at 6,250 to 15,000 dollars.</desc><line x1="8" x2="8" y1="6" y2="98" stroke="#dfe3e0"/><text x="8" y="116" text-anchor="start" font-size="13" fill="#5f6b78">$0</text><line x1="114" x2="114" y1="6" y2="98" stroke="#dfe3e0"/><text x="114" y="116" text-anchor="middle" font-size="13" fill="#5f6b78">$4k</text><line x1="220" x2="220" y1="6" y2="98" stroke="#dfe3e0"/><text x="220" y="116" text-anchor="middle" font-size="13" fill="#5f6b78">$8k</text><line x1="326" x2="326" y1="6" y2="98" stroke="#dfe3e0"/><text x="326" y="116" text-anchor="middle" font-size="13" fill="#5f6b78">$12k</text><line x1="432" x2="432" y1="6" y2="98" stroke="#dfe3e0"/><text x="432" y="116" text-anchor="end" font-size="13" fill="#5f6b78">$16k</text><g><title>Paint existing cabinets (2026): $2.5k to $6.5k</title><text x="8" y="18" font-size="13" fill="#161c24">Paint existing cabinets (2026): <tspan font-weight="700">$2.5k to $6.5k</tspan></text><rect x="74.25" y="24" width="106" height="16" rx="4" fill="#1565a8"/></g><g><title>Replace cabinets (2026): $6.25k to $15k</title><text x="8" y="62" font-size="13" fill="#161c24">Replace cabinets (2026): <tspan font-weight="700">$6.25k to $15k</tspan></text><rect x="173.625" y="68" width="231.875" height="16" rx="4" fill="#b0652a"/></g></svg>
+<p class="src">Sources: HomeBlue, &ldquo;Cost to Paint Exterior of House in Boulder, Colorado&rdquo; and &ldquo;Cost to Paint Interior of House in Boulder, Colorado&rdquo; (published February 1, 2022; interior figure excludes materials). Fixr, &ldquo;How Much Does It Cost to Paint Kitchen Cabinets?&rdquo; (updated January 27, 2026; national figures).</p>
+<details><summary>Show the numbers as a table</summary><div class="tbl"><table><caption>Published cost ranges and their sources</caption><thead><tr><th scope="col">Item</th><th scope="col">Range</th><th scope="col">Source and date</th></tr></thead><tbody><tr><th scope="row">Exterior painting, Boulder</th><td>$1.30 to $3.10 per sq ft</td><td>HomeBlue, Feb 2022</td></tr><tr><th scope="row">Interior painting, Boulder</th><td>$1.30 to $3.10 per sq ft plus material</td><td>HomeBlue, Feb 2022</td></tr><tr><th scope="row">Painting kitchen cabinets</th><td>$2,500 to $6,500 (national)</td><td>Fixr, Jan 2026</td></tr><tr><th scope="row">Replacing kitchen cabinets</th><td>$6,250 to $15,000 (national)</td><td>Fixr, Jan 2026</td></tr></tbody></table></div></details></figure>
+<p>Two honest caveats. The Boulder figures are from 2022, and labor and material costs have risen since, so treat them as a floor for planning rather than a 2026 quote. And per-square-foot pricing hides the variables that actually decide a Boulder estimate: how much failing paint has to come off, how much trim there is, whether the house is pre-1978, and how hard the site is to stage. <a href="/what-painting-costs-in-boulder/">What painting costs</a> walks through those.</p>
 
-.tbl{overflow-x:auto;margin:18px 0}
-.tbl table{width:100%;border-collapse:collapse;font-size:.96rem;min-width:540px;background:#fff;color:var(--ink)}
-.tbl th,.tbl td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink)}
-.tbl thead th{background:var(--blue-deep);color:#fff;font-weight:700}
-.tbl tbody td:first-child{font-weight:700;color:var(--blue-deep)}
-.tbl caption{caption-side:bottom;padding-top:9px;font-size:.84rem;color:var(--muted);text-align:left}
+<h2>6. What decides how long paint lasts here</h2>
+<p>There is no honest single number for how often a Boulder house needs repainting. This ranking is our professional judgment from diagnosing failed coatings in Boulder County, set against manufacturer guidance. It is not a published statistic, and we label it that way on purpose.</p>
+<div class="tbl"><table><caption>Coating-life factors, ranked by professional judgment</caption><thead><tr><th scope="col">Factor</th><th scope="col">Effect in Boulder</th><th scope="col">Can you control it?</th></tr></thead><tbody>
+<tr><th scope="row">Surface preparation</th><td>The largest single factor. Paint over chalk, dirt or failing coats fails early whatever the brand.</td><td>Yes. It is the line to read on any estimate.</td></tr>
+<tr><th scope="row">Exposure direction</th><td>South and west walls take the most sun and fail first.</td><td>No, but you can specify better product there.</td></tr>
+<tr><th scope="row">Elevation and ultraviolet</th><td>The World Health Organization puts the rise in UV at roughly 10% per 1,000 meters of altitude. Boulder sits about 1,650 meters up.</td><td>No.</td></tr>
+<tr><th scope="row">Moisture</th><td>Sprinkler spray, gutter overflow and soil contact cause most of the early peeling we are called to look at.</td><td>Yes, and usually cheaply.</td></tr>
+<tr><th scope="row">Substrate</th><td>Fiber cement and masonry hold coatings longer than old wood or hardboard.</td><td>Only when the siding is replaced.</td></tr>
+<tr><th scope="row">Color</th><td>Saturated reds and yellows fade faster than earth tones and neutrals.</td><td>Yes, at selection.</td></tr>
+<tr><th scope="row">Coat count and product grade</th><td>Film thickness is protection. Two proper coats of a premium line outlast one heavy coat of a cheap one.</td><td>Yes. It should be in writing.</td></tr>
+</tbody></table></div>
 
-.ticks{list-style:none}
-.ticks li{position:relative;padding:11px 0 11px 30px;border-bottom:1px solid var(--line);color:var(--muted)}
-.ticks li::before{content:"";position:absolute;left:2px;top:18px;width:14px;height:7px;border-left:3px solid var(--teal);border-bottom:3px solid var(--teal);transform:rotate(-45deg)}
-.ticks strong{color:var(--ink)}
-.deep .ticks li{border-color:rgba(255,255,255,.16);color:rgba(255,255,255,.86)}
-.deep .ticks strong{color:#fff}
-.steps{list-style:none;counter-reset:s}
-.steps li{counter-increment:s;display:grid;grid-template-columns:58px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
-.steps li::before{content:counter(s);font-family:var(--fd);font-weight:700;font-size:1.5rem;color:#fff;background:var(--blue);width:44px;height:44px;border-radius:10px;display:grid;place-items:center;line-height:1}
-.steps p{color:var(--muted);margin-top:3px}
-.deep .steps li{border-color:rgba(255,255,255,.16)}
-.deep .steps li::before{background:var(--sun);color:#3a2b00}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.deep .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4);color:#fff}
-.deep a.chip:hover{background:rgba(255,255,255,.22);color:#fff}
-.chip{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.9rem;font-weight:600;color:var(--blue-deep);background:#fff;text-decoration:none}
-a.chip:hover{border-color:var(--blue);background:var(--paper)}
-.callout{background:var(--blue-deep);color:#fff;border-radius:12px;padding:28px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.callout h3{font-size:1.5rem;color:#fff}
-.callout p{color:rgba(255,255,255,.85);margin-top:4px}
-.mapbox{border-radius:10px;overflow:hidden;border:1px solid var(--line);min-height:330px;background:var(--paper)}
-.mapbox iframe{width:100%;height:100%;min-height:330px;border:0;display:block}
+<h2>Sources and method</h2>
+<ul class="sources">
+<li>NOAA National Centers for Environmental Information, <a href="https://www.ncei.noaa.gov/products/land-based-station/us-climate-normals" rel="noopener">U.S. Climate Normals 1991&ndash;2020</a>, monthly and annual/seasonal normals for station USC00050848 (Boulder, CO). The 1991&ndash;2020 set is the current release; NOAA updates normals once a decade.</li>
+<li>NOAA Physical Sciences Laboratory, Boulder <a href="https://psl.noaa.gov/boulder/lastfrost.html" rel="noopener">last spring frost</a> and <a href="https://psl.noaa.gov/boulder/freeze.html" rel="noopener">first fall frost</a> records (frost defined as a minimum of 32&deg;F or lower).</li>
+<li>U.S. Census Bureau, American Community Survey 2020&ndash;2024 5-year estimates, tables B25034, B25003 and B25077, released December 2025. This is the most recent 5-year release; it replaces the 2019&ndash;2023 figures.</li>
+<li>Sherwin-Williams, <a href="https://www.sherwin-williams.com/painting-contractors/products/duration-exterior-acrylic-latex" rel="noopener">Duration Exterior Acrylic Latex</a> product information (application down to 35&deg;F).</li>
+<li>World Health Organization, ultraviolet radiation guidance (UV rises by almost 10% per 1,000 meters of altitude).</li>
+<li>HomeBlue, <a href="https://www.homeblue.com/house-painting/boulder-co-cost-to-paint-exterior-of-house.htm" rel="noopener">exterior</a> and <a href="https://www.homeblue.com/house-painting/boulder-co-cost-to-paint-interior-of-house.htm" rel="noopener">interior</a> painting cost guides for Boulder, CO (February 2022).</li>
+<li>Fixr, <a href="https://www.fixr.com/costs/paint-kitchen-cabinets" rel="noopener">cost to paint kitchen cabinets</a> (updated January 2026).</li>
+</ul>
+<p>Percentages are computed from the published Census counts. Nothing on this page is a projection or a survey we ran ourselves. If a source updates, this page gets updated and re-dated.</p>
+</div>
+<aside class="aside"><h3>Want this applied to your house?</h3><p>Send the address, the year it was built and a photo of each side. We will tell you which month it belongs in and what the preparation looks like, in writing.</p><a class="btn btn-sand" href="/get-an-estimate/">Start an estimate</a></aside>
+</div></div></section>
 
-.formcard{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 44px rgba(18,32,51,.12);overflow:hidden}
-.formcard .top{background:var(--blue-deep);color:#fff;padding:18px 22px}
-.formcard .top .t{font-family:var(--fd);font-size:1.35rem;font-weight:700}
-.formcard .top p{color:rgba(255,255,255,.82);font-size:.89rem;margin-top:3px}
-.formcard .body{padding:20px 22px 22px}
-.fld{margin-bottom:12px}
-.fld label,.fld .lb{display:block;font-weight:600;font-size:.85rem;color:var(--blue-deep);margin-bottom:5px}
-.fld em{font-style:normal;color:var(--orange-ink)}
-.fld input,.fld select,.fld textarea{width:100%;font-family:var(--fu);font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px;outline:none}
-.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--blue);background:#fff}
-.fld textarea{min-height:88px;resize:vertical}
-.fld input[type=file]{background:#fff;border-style:dashed;padding:10px}
-.fld small{display:block;font-size:.79rem;color:var(--muted);margin-top:4px}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
-.msg{display:none;margin-top:12px;padding:12px 14px;border-radius:6px;font-size:.92rem;font-weight:600}
-.msg.ok{display:block;background:#e6f6ee;color:#13603a}
-.msg.warn{display:block;background:#fdecea;color:#8c2019}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.fine{font-size:.81rem;color:var(--muted);margin-top:10px;text-align:center}
-[hidden]{display:none!important}
-
-.faq{max-width:900px}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 0;font-family:var(--fd);font-weight:700;font-size:1.08rem;color:var(--blue-deep)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex-shrink:0;width:27px;height:27px;border-radius:7px;border:2px solid var(--blue-deep);display:grid;place-items:center;font-family:var(--fu);font-weight:700;transition:transform .22s}
-.faq details[open] summary::after{transform:rotate(45deg);background:var(--blue-deep);color:#fff}
-.faq .a{padding:0 0 18px;color:var(--muted);max-width:76ch}
-
-.crumb{background:var(--paper);border-bottom:1px solid var(--line);font-size:.85rem;padding:10px 0}
-.crumb ol{list-style:none;display:flex;gap:8px;flex-wrap:wrap}
-.crumb li+li::before{content:"/";margin-right:8px;color:var(--muted)}
-.crumb a{text-decoration:none;font-weight:600}
-
-.site-foot{background:#fff;border-top:4px solid var(--blue-deep);padding:50px 0 18px;font-size:.94rem}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px;padding-bottom:28px;border-bottom:1px solid var(--line)}
-.foot-grid img{height:110px;width:auto;margin-bottom:12px}
-.site-foot h3{font-family:var(--fu);font-size:.84rem;letter-spacing:.13em;text-transform:uppercase;color:var(--orange-ink);margin-bottom:11px}
-.site-foot ul{list-style:none}
-.site-foot li{margin-bottom:7px}
-.site-foot a{color:var(--ink);text-decoration:none}
-.site-foot a:hover{color:var(--orange-ink);text-decoration:underline}
-.site-foot address{font-style:normal;color:var(--muted);line-height:1.8}
-.fphone{font-weight:800;font-size:1.45rem;color:var(--blue-deep)!important;text-decoration:none!important}
-.foot-end{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:18px;font-size:.84rem;color:var(--muted)}
-.heart-wrap{text-align:center;padding:14px 0 24px;font-size:.93rem}
-.heart{display:inline-block;color:#e23c2e;font-size:1.2rem;animation:bump 2.4s ease-in-out infinite}
-@keyframes bump{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
-
-.tapbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:950;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(18,32,51,.12);padding:8px;gap:8px}
-.tapbar a{flex:1;text-align:center;padding:13px 6px;border-radius:6px;font-weight:700;text-decoration:none;font-size:.97rem}
-.tapbar .c{background:var(--orange);color:#fff}
-.tapbar .q{background:var(--blue-deep);color:#fff}
-
-@media (max-width:1230px){.nav{display:none}.burger{display:block}.ringer{margin-left:auto}}
-@media (max-width:860px){.brand img{height:62px}.brand .bn{font-size:1.02rem}.ringer b{font-size:1.02rem}.ringer i{font-size:.66rem}}
-@media (max-width:640px){.brand .bn span{display:none}.ringer i{display:none}}
-@media (max-width:430px){.brand .bn{display:none}.brand img{height:54px}}
-@media (max-width:980px){.grid-3,.grid-4,.grid-2{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2n){border-right:0}}
-@media (max-width:760px){
-  .head-in{padding:8px 13px;gap:10px}
-  .brand img{height:56px}.site-head.tight .brand img{height:44px}
-  .brand .bn{font-size:1rem}.brand .bn span{font-size:.62rem}
-  .head-cta,.ringer i{display:none}
-  .ringer{background:var(--orange-ink);border-radius:6px;padding:9px 12px;gap:0}
-  .ringer .ic{display:none}
-  .ringer b{color:#fff;font-size:1.08rem;white-space:nowrap}
-  .alertbar{font-size:.81rem}.alertbar .fine{display:none}
-}
-@media (max-width:640px){
-  section{padding:52px 0}
-  .grid-2,.grid-3,.grid-4,.split,.split.wide,.duo,.stats{grid-template-columns:1fr}
-  .stats div{border-right:0;border-bottom:1px solid var(--line)}
-  .foot-grid{grid-template-columns:1fr}
-  .tapbar{display:flex}
-  body{padding-bottom:70px}
-}
-
-/* compat utilities */
-.pip{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-family:var(--fd);font-weight:800;color:#fff;margin-bottom:12px;font-size:1.05rem}
-.optgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.pick{position:relative;display:block}
-.pick input{position:absolute;opacity:0;inset:0;cursor:pointer}
-.pick span{display:flex;align-items:center;min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-weight:600;font-size:.92rem;background:var(--paper);cursor:pointer}
-.pick input:checked+span{border-color:var(--blue);background:#e8f0fb;box-shadow:inset 3px 0 0 var(--orange)}
-.pick input:focus-visible+span{outline:3px solid var(--sun);outline-offset:2px}
-.meter{display:grid;gap:10px;margin:16px 0}
-.meter .row{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}
-.meter .lb{font-size:.92rem;font-weight:600;color:var(--blue-deep)}
-.meter .bar{background:var(--paper);border-radius:4px;height:26px;overflow:hidden;border:1px solid var(--line)}
-.meter .fill{display:block;height:100%;width:0;transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
-.meter .b1{background:linear-gradient(90deg,#5aa6ff,var(--blue))}
-.meter .b2{background:linear-gradient(90deg,var(--sun),var(--orange))}
-.meter .b3{background:linear-gradient(90deg,#54c9a6,var(--teal))}
-.grid-2>*,.grid-3>*,.grid-4>*,.split>*{min-width:0}
-@media (max-width:640px){.meter .row{grid-template-columns:1fr;gap:4px}.optgrid{grid-template-columns:1fr}}
-
-@media (max-width:430px){
-  .head-in{padding:7px 10px;gap:8px}
-  .brand img{height:46px!important}
-  .brand span{font-size:.92rem}
-  .brand span i{font-size:.58rem;letter-spacing:.1em}
-  .ringer{padding:8px 10px}
-  .ringer b{font-size:.98rem!important}
-  .burger{padding:8px 10px;font-size:.9rem}
-  .brand span{display:none}
-}
-
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
-.hero{background:linear-gradient(180deg,#fff 0%,var(--paper) 100%);border-bottom:1px solid var(--line);padding:46px 0 52px}
-.hero-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;align-items:center;max-width:var(--wrap);margin:0 auto;padding:0 22px}
-.hero h1{font-size:clamp(2.05rem,4.1vw,3.3rem);max-width:18ch;margin-bottom:14px}
-.hero h1 em{font-style:normal;color:var(--orange-ink)}
-.hero .sub{font-size:1.14rem;color:var(--muted);max-width:52ch;margin-bottom:22px}
-.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
-.hero-pts{display:grid;gap:8px;font-size:.98rem;font-weight:600;color:var(--blue-deep)}
-.hero-pts span{display:flex;gap:9px;align-items:flex-start}
-.hero-pts i{font-style:normal;color:var(--teal);font-weight:800}
-.flag{display:inline-flex;align-items:center;gap:8px;background:#fff6dd;border:1px solid #f3dd9c;color:#6b5100;border-radius:6px;padding:7px 13px;font-weight:700;font-size:.88rem;margin-bottom:14px;width:fit-content}
-.shots{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:8px}
-.shots img{width:100%;height:100%;object-fit:cover;border-radius:10px}
-.shots .tall{grid-row:1 / span 2;aspect-ratio:3/4}
-.shots .sm{aspect-ratio:4/3}
-.answer{border-left:5px solid var(--sun);background:var(--paper);border-radius:0 10px 10px 0;padding:24px 28px;display:grid;grid-template-columns:170px 1fr;gap:22px}
-.answer h2{font-size:1.3rem;margin:0}
-.answer p{color:var(--muted);max-width:78ch}
-.badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
-.badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:6px;background:#fff;padding:9px 13px;font-weight:700;font-size:.88rem;color:var(--blue-deep)}
-.badge i{font-style:normal;color:var(--orange)}
-.colgrid{columns:3 220px;column-gap:26px}
-.colgrid a{display:block;padding:6px 0;text-decoration:none;font-weight:600;break-inside:avoid}
-@media (max-width:1000px){
-  .hero-in{grid-template-columns:1fr;gap:28px}
-  .answer{grid-template-columns:1fr;gap:10px}
-  .shots .tall{aspect-ratio:16/10}
-}
-
-.chart{display:flex;gap:10px;align-items:flex-end;height:240px;margin-top:26px;padding:18px;background:var(--paper);border:1px solid var(--line);border-radius:12px}
-.ch-col{flex:1;display:flex;flex-direction:column;align-items:center;height:100%}
-.ch-track{flex:1;width:100%;display:flex;align-items:flex-end}
-.ch-fill{width:100%;border-radius:6px 6px 0 0;min-height:3px}
-.ch-lab{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--blue-deep);margin-top:8px}
-.ranges{margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px}
-.rg-row{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center;margin-bottom:18px}
-.rg-row:last-child{margin-bottom:0}
-.rg-lab{font-family:var(--fd);font-weight:700;font-size:.92rem;color:var(--blue-deep)}
-.rg-track{position:relative;height:40px;background:#fff;border:1px solid var(--line);border-radius:8px}
-.rg-span{position:absolute;top:6px;bottom:6px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;min-width:96px}
-.rg-span em,.rg-span i{font-style:normal;font-family:var(--fd);font-weight:700;font-size:.82rem;color:#fff}
-.src{margin-top:14px;font-size:.86rem;color:var(--muted);max-width:80ch}
-@media (max-width:700px){.rg-row{grid-template-columns:1fr;gap:6px}.chart{height:190px;gap:5px;padding:12px}.ch-lab{font-size:.68rem}}
-</style>
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@graph": [
-  {
-   "@type": "WebPage",
-   "@id": "https://bouldercopainters.com/boulder-painting-data/#webpage",
-   "url": "https://bouldercopainters.com/boulder-painting-data/",
-   "name": "Boulder Painting Data | Costs, Season & Coating Life",
-   "description": "Boulder painting by the numbers: the real exterior season from freeze data, published 2026 cost ranges, refinish versus replace, and what drives coating life.",
-   "isPartOf": {
-    "@id": "https://bouldercopainters.com/#website"
-   },
-   "about": {
-    "@id": "https://bouldercopainters.com/#business"
-   },
-   "inLanguage": "en-US",
-   "dateModified": "2026-10-07",
-   "primaryImageOfPage": "https://bouldercopainters.com/images/boulder-painters.jpg",
-   "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [
-     "h1",
-     ".sub",
-     "#hotline-answer"
-    ]
-   },
-   "breadcrumb": {
-    "@id": "https://bouldercopainters.com/boulder-painting-data/#breadcrumb"
-   }
-  },
-  {
-   "@type": [
-    "HousePainter",
-    "LocalBusiness"
-   ],
-   "@id": "https://bouldercopainters.com/#business",
-   "name": "Boulder CO Painters",
-   "url": "https://bouldercopainters.com/",
-   "telephone": "+17202085645",
-   "email": "quote@painterhotline.com",
-   "logo": "https://bouldercopainters.com/images/boulder-co-painters-logo.png",
-   "image": "https://bouldercopainters.com/images/boulder-painters.jpg",
-   "description": "Boulder CO Painters is a painting company serving Boulder, Colorado and Boulder County. Interior and exterior house painting, historic home painting, cabinet refinishing, deck and fence staining, low-VOC work, rental turnovers, and commercial and HOA projects, fully insured with a 5-year workmanship warranty.",
-   "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Boulder",
-    "addressRegion": "CO",
-    "addressCountry": "US"
-   },
-   "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 40.015,
-    "longitude": -105.2705
-   },
-   "areaServed": [
-    {
-     "@type": "City",
-     "name": "Boulder, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Niwot, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Gunbarrel, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Longmont, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Lafayette, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Louisville, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Superior, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Erie, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Golden, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Nederland, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Broomfield, CO"
-    },
-    {
-     "@type": "City",
-     "name": "Eldorado Springs, CO"
-    }
-   ],
-   "priceRange": "$$",
-   "paymentAccepted": "Cash, Check, Credit Card",
-   "currenciesAccepted": "USD",
-   "openingHoursSpecification": [
-    {
-     "@type": "OpeningHoursSpecification",
-     "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-     ],
-     "opens": "07:00",
-     "closes": "19:00"
-    }
-   ],
-   "knowsAbout": [
-    "Interior painting",
-    "Exterior painting",
-    "Historic home painting",
-    "Cabinet painting",
-    "Deck and fence staining",
-    "Low-VOC and zero-VOC coatings",
-    "Rental turnover painting",
-    "Commercial and HOA painting",
-    "Lead-safe painting practices",
-    "High-altitude UV coating failure"
-   ],
-   "makesOffer": {
-    "@type": "Offer",
-    "name": "25% off painting projects",
-    "description": "25% off painting projects booked by October 31, 2026. Labor only; paint and materials not included.",
-    "availabilityStarts": "2026-10-01",
-    "availabilityEnds": "2026-10-31",
-    "url": "https://bouldercopainters.com/free-estimates/"
-   },
-   "potentialAction": {
-    "@type": "AskAction",
-    "name": "Request a painting quote",
-    "target": {
-     "@type": "EntryPoint",
-     "urlTemplate": "https://bouldercopainters.com/contact/",
-     "actionPlatform": [
-      "http://schema.org/DesktopWebPlatform",
-      "http://schema.org/MobileWebPlatform"
-     ]
-    }
-   },
-   "sameAs": [
-    "https://painterhotline.com"
-   ]
-  },
-  {
-   "@type": "WebSite",
-   "@id": "https://bouldercopainters.com/#website",
-   "url": "https://bouldercopainters.com/",
-   "name": "Boulder CO Painters",
-   "inLanguage": "en-US",
-   "publisher": {
-    "@id": "https://bouldercopainters.com/#business"
-   }
-  },
-  {
-   "@type": "BreadcrumbList",
-   "@id": "https://bouldercopainters.com/boulder-painting-data/#breadcrumb",
-   "itemListElement": [
-    {
-     "@type": "ListItem",
-     "position": 1,
-     "name": "Home",
-     "item": "https://bouldercopainters.com/"
-    },
-    {
-     "@type": "ListItem",
-     "position": 2,
-     "name": "By the Numbers",
-     "item": "https://bouldercopainters.com/boulder-painting-data/"
-    }
-   ]
-  },
-  {
-   "@type": "FAQPage",
-   "@id": "https://bouldercopainters.com/boulder-painting-data/#faq",
-   "mainEntity": [
-    {
-     "@type": "Question",
-     "name": "When can exteriors actually be painted in Boulder?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The practical window runs from about mid-May through early October. Denver-area climate records put the average last spring freeze near May 5 and the average first fall freeze near October 7. Paint labels specify minimum application and overnight temperatures, so the limiting factor is the overnight low, not the afternoon high."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How much does painting cost in Boulder?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Published 2026 Front Range data puts exterior house painting at roughly $1.55 to $4.10 per square foot of paintable surface and interior painting at about $1.50 to $3.50 per square foot. Cabinet refinishing commonly lands between $2,000 and $8,000 per kitchen. Condition drives the number more than square footage alone."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How often does a Boulder house need repainting?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "It depends on exposure and substrate far more than on a calendar. Sheltered north elevations with quality coatings can run well past a decade, while west-facing walls against the foothills commonly need attention sooner. The honest test is the condition of the surface, not the date of the last job."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Is painting cheaper in winter?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Interior work is easier to schedule in winter because exterior crews are waiting on weather, and that flexibility helps. Exterior work is not simply cheaper in cold months; it is often not possible within the manufacturer's temperature requirements."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Why does the same house get quotes that differ by thousands?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Because the quotes describe different work. Preparation depth, primer, coat count, product grade and warranty length are the five places a lower number usually comes from. Compare those lines before comparing totals."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Where do these figures come from?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Cost ranges are compiled from published 2026 Colorado and Front Range contractor cost data. Freeze dates reflect National Weather Service Denver-area climate normals. Application temperature limits come from manufacturer product data sheets. They are ranges and norms rather than guarantees, and your written estimate is measured on your actual property."
-     }
-    }
-   ]
-  }
- ]
-}
-</script>
-</head>
-<body data-h1="Zm9ybQ==" data-h2="c3VibWl0LmNv" data-u1="aW4=" data-u2="Zm8=" data-d1="ZXlldG9hZA==" data-d2="LmNvbQ==">
-<a class="sr" href="#main">Skip to content</a>
-<div class="alertbar"><div class="wrap"><span><b>25% off painting projects booked by October 31, 2026</b> &nbsp;&middot;&nbsp; <a href="/contact/">See the offer</a></span><span class="fine">Discount applies to labor. Paint and materials not included.</span></div></div>
-<header class="site-head">
-  <div class="head-in">
-    <a class="brand" href="/" aria-label="Boulder CO Painters, home"><img src="/images/boulder-co-painters-logo.png" alt="Boulder CO Painters, house painters in Boulder, Colorado" height="84" width="84" fetchpriority="high"><span class="bn">Boulder CO Painters<span>Boulder County, Colorado</span></span></a>
-    <nav class="nav" aria-label="Main"><div class="drop"><button type="button" class="drop-btn" aria-expanded="false">Services <span aria-hidden="true">&#9662;</span></button><div class="drop-menu"><a href="/interior-painting-boulder/">Interior painting</a><a href="/exterior-painting-boulder/">Exterior painting</a><a href="/cabinet-painting-boulder/">Cabinet painting</a><a href="/historic-home-painting-boulder/">Historic home painting</a><a href="/deck-fence-staining-boulder/">Deck &amp; fence staining</a><a href="/low-voc-painting-boulder/">Low-VOC &amp; eco painting</a><a href="/rental-turnover-painting-boulder/">Student rentals &amp; turnovers</a><a href="/commercial-painting-boulder/">Commercial &amp; HOA painting</a></div></div><div class="drop"><button type="button" class="drop-btn" data-cur="1" aria-expanded="false">Learn <span aria-hidden="true">&#9662;</span></button><div class="drop-menu"><a href="/painting-cost-boulder/">What painting costs</a><a href="/paint-colors-boulder/">Color guide</a><a href="/boulder-painting-data/" aria-current="page">By the numbers</a><a href="/how-it-works/">How we work</a><a href="/warranty/">5-year warranty</a><a href="/faq/">Painting FAQ</a><a href="/terms/">Terms &amp; conditions</a></div></div><a href="/service-areas/">Areas</a><a href="/neighborhoods/">Neighborhoods</a><a href="/about/">About</a><a href="/contact/">Free estimate</a></nav>
-    <a class="ringer" href="tel:+17202085645" aria-label="Call 720-208-5645"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span><span><b>720-208-5645</b><i>Boulder County, 7 days</i></span></a>
-    <a class="btn btn-call head-cta" href="/contact/" data-quote>Get my quote</a>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="tray">Menu</button>
-  </div>
-  <nav class="tray" id="tray" aria-label="Mobile"><a href="/">Home</a><a class="sub" href="/interior-painting-boulder/">Interior painting</a><a class="sub" href="/exterior-painting-boulder/">Exterior painting</a><a class="sub" href="/cabinet-painting-boulder/">Cabinet painting</a><a class="sub" href="/historic-home-painting-boulder/">Historic home painting</a><a class="sub" href="/deck-fence-staining-boulder/">Deck &amp; fence staining</a><a class="sub" href="/low-voc-painting-boulder/">Low-VOC &amp; eco painting</a><a class="sub" href="/rental-turnover-painting-boulder/">Student rentals &amp; turnovers</a><a class="sub" href="/commercial-painting-boulder/">Commercial &amp; HOA painting</a><a class="sub" href="/painting-cost-boulder/">What painting costs</a><a class="sub" href="/paint-colors-boulder/">Color guide</a><a class="sub" href="/boulder-painting-data/">By the numbers</a><a class="sub" href="/how-it-works/">How we work</a><a class="sub" href="/warranty/">5-year warranty</a><a class="sub" href="/faq/">Painting FAQ</a><a class="sub" href="/terms/">Terms &amp; conditions</a><a href="/service-areas/">Areas</a><a href="/neighborhoods/">Neighborhoods</a><a href="/about/">About</a><a href="/contact/">Free estimate</a><a href="/contact/" data-quote style="color:var(--orange-ink)">Get my free estimate</a></nav>
-</header><nav class="crumb" aria-label="Breadcrumb"><div class="wrap"><ol><li><a href="/">Home</a></li><li aria-current="page">By the Numbers</li></ol></div></nav>
-<main id="main">
-<section class="hero" aria-label="Boulder painting, by the numbers.">
-  <div class="hero-in">
-    <div>
-      
-      <h1>Boulder painting, <em>by the numbers</em>.</h1>
-      <p class="sub">Published cost ranges, the real seasonal window, and the conditions that decide how long a coating lasts up here. Every figure is labeled with where it comes from.</p>
-      <div class="hero-btns">
-        <a class="btn btn-call" href="tel:+17202085645"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg> Call 720-208-5645</a>
-        <a class="btn btn-out" href="/contact/" data-quote>Get my free quote</a>
-      </div>
-      <div class="hero-pts"><span><i>&#10003;</i>The exterior painting window, month by month</span><span><i>&#10003;</i>Published 2026 Front Range cost ranges</span><span><i>&#10003;</i>Refinishing versus replacing a kitchen</span><span><i>&#10003;</i>What actually drives repaint frequency</span></div>
-    </div>
-    <div class="shots"><img class="tall" src="/images/boulder-painters.jpg" alt="Exterior painting data for Boulder, Colorado" width="620" height="820" fetchpriority="high" decoding="async"><img class="sm" src="/images/boulder-exterior-painter.jpg" alt="Painting project in Boulder, CO" loading="lazy" decoding="async" width="420" height="320"><img class="sm" src="/images/boulder-house-painting.jpeg" alt="Interior painting in Boulder, CO" loading="lazy" decoding="async" width="420" height="320"></div>
-  </div>
-</section><section style="padding:48px 0 6px"><div class="wrap"><div class="answer" id="hotline-answer"><h2>Quick answer</h2><div><p>In Boulder, the practical exterior painting season runs from about <strong>mid-May through early October</strong>, bounded by Denver-area average freeze dates near May 5 and October 7 and by manufacturer minimum application temperatures. Published 2026 Front Range cost data puts <strong>exterior painting at about $1.55 to $4.10 per square foot</strong> and <strong>interior painting at about $1.50 to $3.50 per square foot</strong>, with <strong>cabinet refinishing at roughly $2,000 to $8,000</strong> against $15,000 to $30,000 or more for replacement. Call <a href="tel:+17202085645">720-208-5645</a> for an estimate measured on your property.</p></div></div></div></section><section aria-labelledby="season-h"><div class="wrap"><span class="eyebrow">Chart 1</span><h2 id="season-h">The Boulder exterior painting window</h2><p class="lead">Relative suitability for exterior coating work by month, based on Denver-area average freeze dates and typical manufacturer minimum application temperatures. Hover or tap a bar for detail.</p><div class="chart" role="img" aria-label="Bar chart of exterior painting suitability by month, peaking June through September and closed November through March"><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:0%;background:var(--line)" title="Jan: Closed, too cold for exterior coatings"></div></div><span class="ch-lab">Jan</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:0%;background:var(--line)" title="Feb: Closed"></div></div><span class="ch-lab">Feb</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:20%;background:var(--line)" title="Mar: Rare warm windows, risky overnight"></div></div><span class="ch-lab">Mar</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:45%;background:var(--sun)" title="Apr: Possible, watch overnight lows"></div></div><span class="ch-lab">Apr</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:80%;background:var(--teal)" title="May: Opens around mid-month"></div></div><span class="ch-lab">May</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:100%;background:var(--teal)" title="Jun: Prime season"></div></div><span class="ch-lab">Jun</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:100%;background:var(--teal)" title="Jul: Prime season"></div></div><span class="ch-lab">Jul</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:100%;background:var(--teal)" title="Aug: Prime season"></div></div><span class="ch-lab">Aug</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:95%;background:var(--teal)" title="Sep: Excellent"></div></div><span class="ch-lab">Sep</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:55%;background:var(--sun)" title="Oct: Closing, early month only"></div></div><span class="ch-lab">Oct</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:10%;background:var(--line)" title="Nov: Essentially closed"></div></div><span class="ch-lab">Nov</span></div><div class="ch-col"><div class="ch-track"><div class="ch-fill" style="height:0%;background:var(--line)" title="Dec: Closed"></div></div><span class="ch-lab">Dec</span></div></div><p class="src">Sources: National Weather Service Denver-area climate normals for average last spring freeze, about May 5, and average first fall freeze, about October 7; manufacturer product data sheets for minimum application and overnight temperatures. Weather varies year to year, and a warm week in March is still a week with freezing nights after it.</p><div class="grid-3" style="margin-top:24px"><div class="card"><h3>Why overnight lows matter</h3><p>A coating applied at 65 degrees in the afternoon still has to cure through the night. If the temperature drops below the product minimum before the film sets, adhesion and finish both suffer.</p></div><div class="card"><h3>Why October closes fast</h3><p>Early October is often beautiful. The problem is that the average first freeze lands in the middle of it, and the margin shrinks every week after.</p></div><div class="card"><h3>What this means for booking</h3><p>The usable season is roughly twenty weeks, and every painting company in Boulder County works inside the same window. Booking ahead is arithmetic, not a sales tactic.</p></div></div></div></section><section class="band" aria-labelledby="cost-h"><div class="wrap"><span class="eyebrow">Chart 2</span><h2 id="cost-h">Published 2026 cost ranges, per square foot</h2><p class="lead">Market ranges from published Colorado contractor cost data, not our price list. Where a project lands inside the range depends mostly on condition and detail.</p><div class="ranges"><div class="rg-row"><span class="rg-lab">Interior, per sq ft</span><div class="rg-track"><span class="rg-span" style="left:30.0%;width:40.0%"><em>$1.50</em><i>$3.50</i></span></div></div><div class="rg-row"><span class="rg-lab">Exterior, per sq ft</span><div class="rg-track"><span class="rg-span" style="left:31.0%;width:51.0%"><em>$1.55</em><i>$4.10</i></span></div></div></div><p class="src">Source: published 2026 Front Range and Colorado painting cost data, expressed per square foot of paintable surface for exteriors and per square foot of floor area for interiors. Your written estimate is measured on the actual building.</p></div></section><section aria-labelledby="kit-h"><div class="wrap"><span class="eyebrow">Chart 3</span><h2 id="kit-h">Refinishing a kitchen versus replacing it</h2><p class="lead">The largest cost gap in residential painting, and the reason cabinet work is the project we are asked about most.</p><div class="ranges"><div class="rg-row"><span class="rg-lab">Refinish existing cabinets</span><div class="rg-track"><span class="rg-span" style="left:6.2%;width:18.8%;background:var(--teal)"><em>$2,000</em><i>$8,000</i></span></div></div><div class="rg-row"><span class="rg-lab">Replace with new cabinetry</span><div class="rg-track"><span class="rg-span" style="left:46.9%;width:46.9%;background:var(--orange)"><em>$15,000</em><i>$30,000</i></span></div></div></div><p class="src">Sources: published 2026 cabinet refinishing and replacement cost data for the Denver and Boulder market. Replacement cost varies enormously with material and layout, and custom work runs well past the top of this chart.</p><div class="card" style="margin-top:20px;border-top:5px solid var(--teal)"><h3>The honest caveat</h3><p style="margin-top:8px">Refinishing only makes sense when the boxes and doors are structurally sound. If the cabinetry is particleboard that has swollen, if the layout genuinely does not work, or if doors are delaminating, paint is lipstick on a problem. We will say so rather than take the job.</p></div></div></section><section class="band" aria-labelledby="life-h"><div class="wrap"><span class="eyebrow">Chart 4</span><h2 id="life-h">What actually decides how long your paint lasts</h2><p class="lead">There is no honest single number for repaint frequency, because the variables below matter far more than the calendar. They are ranked by how much difference they make in Boulder specifically.</p><div class="tbl" style="margin-top:20px"><table><thead><tr><th scope="col">Factor</th><th scope="col">Effect in Boulder</th><th scope="col">Can you control it?</th></tr></thead><tbody><tr><td><strong>Surface preparation</strong></td><td>The largest single factor. Coating applied over chalk, dirt or failing paint fails early regardless of product quality.</td><td>Yes, entirely. It is the line to read on any estimate.</td></tr><tr><td><strong>Exposure direction</strong></td><td>South and west elevations take dramatically more ultraviolet load than north and east, and they fail first.</td><td>No, but you can specify better product on those walls.</td></tr><tr><td><strong>Elevation and UV</strong></td><td>Ultraviolet intensity rises with altitude, and Boulder sits around 5,400 feet with the foothills immediately west.</td><td>No. It is the tax for living here.</td></tr><tr><td><strong>Substrate</strong></td><td>Fiber cement and masonry hold coatings longer than wood or aged hardboard.</td><td>Only at replacement time.</td></tr><tr><td><strong>Moisture contact</strong></td><td>Sprinkler spray, gutter overflow and grade contact are the most common causes of early peeling we are called to diagnose.</td><td>Yes, and it is usually a cheap fix.</td></tr><tr><td><strong>Color saturation</strong></td><td>Deep reds, bright blues and strong greens lose intensity faster than mid-tones under high UV.</td><td>Yes, at selection time.</td></tr><tr><td><strong>Product grade</strong></td><td>Premium exterior lines cost more per gallon and generally buy years of additional service life in this climate.</td><td>Yes. It is specified in the estimate.</td></tr><tr><td><strong>Coat count</strong></td><td>Film thickness is protection. Two proper coats outlast one heavy one.</td><td>Yes, and it should be stated in writing.</td></tr></tbody></table></div><p class="src">This ranking reflects what we find on failure diagnostics in Boulder County combined with manufacturer guidance on coating performance. It is professional judgment, labeled as such, rather than a published statistic.</p></div></section><section style="padding:28px 0"><div class="wrap"><div class="callout"><div><h3>Want these numbers applied to your actual house?</h3><p>Free written estimates across Boulder County, with preparation and products named line by line.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-sun" href="tel:+17202085645"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg> 720-208-5645</a><a class="btn btn-ghost" href="/contact/" data-quote>Get my free quote</a></div></div></div></section><section id="faq" aria-labelledby="faq-h"><div class="wrap"><span class="eyebrow">Straight answers</span><h2 id="faq-h">Questions about these figures</h2><div class="faq"><details><summary>When can exteriors actually be painted in Boulder?</summary><div class="a"><p>The practical window runs from about mid-May through early October. Denver-area climate records put the average last spring freeze near May 5 and the average first fall freeze near October 7. Paint labels specify minimum application and overnight temperatures, so the limiting factor is the overnight low, not the afternoon high.</p></div></details>
-<details><summary>How much does painting cost in Boulder?</summary><div class="a"><p>Published 2026 Front Range data puts exterior house painting at roughly $1.55 to $4.10 per square foot of paintable surface and interior painting at about $1.50 to $3.50 per square foot. Cabinet refinishing commonly lands between $2,000 and $8,000 per kitchen. Condition drives the number more than square footage alone.</p></div></details>
-<details><summary>How often does a Boulder house need repainting?</summary><div class="a"><p>It depends on exposure and substrate far more than on a calendar. Sheltered north elevations with quality coatings can run well past a decade, while west-facing walls against the foothills commonly need attention sooner. The honest test is the condition of the surface, not the date of the last job.</p></div></details>
-<details><summary>Is painting cheaper in winter?</summary><div class="a"><p>Interior work is easier to schedule in winter because exterior crews are waiting on weather, and that flexibility helps. Exterior work is not simply cheaper in cold months; it is often not possible within the manufacturer's temperature requirements.</p></div></details>
-<details><summary>Why does the same house get quotes that differ by thousands?</summary><div class="a"><p>Because the quotes describe different work. Preparation depth, primer, coat count, product grade and warranty length are the five places a lower number usually comes from. Compare those lines before comparing totals.</p></div></details>
-<details><summary>Where do these figures come from?</summary><div class="a"><p>Cost ranges are compiled from published 2026 Colorado and Front Range contractor cost data. Freeze dates reflect National Weather Service Denver-area climate normals. Application temperature limits come from manufacturer product data sheets. They are ranges and norms rather than guarantees, and your written estimate is measured on your actual property.</p></div></details></div></div></section><section style="padding:54px 0"><div class="wrap"><span class="eyebrow">Keep going</span><h2 style="font-size:1.8rem">Next steps</h2><div class="grid-3" style="margin-top:20px"><a class="card" href="/painting-cost-boulder/" style="text-decoration:none;display:block"><h3>What painting costs</h3><p>Ranges, calculator and how to compare bids</p></a><a class="card" href="/exterior-painting-boulder/" style="text-decoration:none;display:block"><h3>Exterior painting</h3><p>Built for foothills UV and chinooks</p></a><a class="card" href="/paint-colors-boulder/" style="text-decoration:none;display:block"><h3>Color guide</h3><p>What high-altitude light does to color</p></a></div></div></section><section class="band" id="quote" aria-labelledby="quote-h">
-  <div class="wrap"><div class="split wide" style="align-items:start">
-    <div>
-      <span class="eyebrow">Free quote</span>
-      <h2 id="quote-h">Get your free painting quote</h2>
-      <p class="lead" style="margin-bottom:16px">Tell the hotline what you need. You get a written quote, no pressure and no obligation.</p>
-      <div class="badges">
-        <span class="badge"><i>&#9679;</i> 20+ years experience</span>
-        <span class="badge"><i>&#9679;</i> Fully insured</span>
-        <span class="badge"><i>&#9679;</i> 5-year workmanship warranty</span>
-        <span class="badge"><i>&#9679;</i> 25% off through Oct 31, 2026</span>
-      </div>
-      <p style="margin-top:18px"><a class="btn btn-blue" href="tel:+17202085645"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg> Call the hotline</a></p>
-      
-    </div>
-    <div class="formcard">
-      <div class="top"><div class="t">Reach the hotline</div><p>Name and number is all it takes to start.</p></div>
-      <div class="body">
-        <form data-lead data-subject="ESTIMATE: Boulder CO Painters (data page)" novalidate>
-          <input type="hidden" name="source_site" value="bouldercopainters.com /boulder-painting-data/">
-          <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
-          <div class="duo">
-            <div class="fld"><label for="dt_n">Name <em>*</em></label><input id="dt_n" name="user_name" autocomplete="name" required></div>
-            <div class="fld"><label for="dt_p">Phone <em>*</em></label><input id="dt_p" name="user_phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
-            <div class="fld"><label for="dt_e">Email</label><input id="dt_e" name="user_email" type="email" autocomplete="email"></div>
-            <div class="fld"><label for="dt_z">Project ZIP</label><input id="dt_z" name="user_zip" inputmode="numeric" autocomplete="postal-code" maxlength="10"></div>
-          </div>
-          <div class="fld"><label for="dt_s">What needs painting?</label><select id="dt_s" name="project_type"><option value="">Choose one</option><option>Interior painting</option><option>Exterior painting</option><option>Cabinet painting</option><option>Deck or fence staining</option><option>Whole-home repaint</option><option>Commercial property</option><option>Fixing failed paint work</option><option>Not sure yet</option></select></div>
-          <div class="fld"><label for="dt_t">How soon?</label><select id="dt_t" name="timeline"><option value="">Choose one</option><option>This week if possible</option><option>Within a month</option><option>1 to 3 months</option><option>Pricing and planning</option></select></div>
-          <div class="fld"><label for="dt_f">Photos (optional, up to 4)</label><input id="dt_f" name="photos" type="file" accept="image/*" multiple><small>Photos get you a faster, more accurate number.</small></div>
-          <div class="fld"><label for="dt_m">Details</label><textarea id="dt_m" name="user_message" placeholder="Rooms, square footage, colors, HOA rules, paint that is already failing..."></textarea></div>
-          <button type="submit" class="btn btn-call" style="width:100%;padding:16px">Send it to the hotline</button>
-          <div class="msg" role="status" aria-live="polite"></div>
-          <noscript><p class="fine">This form needs JavaScript. Call <a href="tel:+17202085645">720-208-5645</a> instead.</p></noscript>
-          <p class="fine">Used only to prepare your quote. We never sell your information.</p>
-        </form>
-      </div>
-    </div>
-  </div></div>
-</section>
-</main>
-<footer class="site-foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <img src="/images/boulder-co-painters-logo.png" alt="Boulder CO Painters, house painters in Boulder, Colorado" height="110" width="110" loading="lazy" decoding="async">
-        <p style="color:var(--muted);max-width:40ch;margin-bottom:12px">Painting company serving Boulder, Colorado and Boulder County. Interior and exterior house painting, historic homes, cabinets, decks, low-VOC work and commercial projects across Boulder, Niwot, Gunbarrel, Longmont, Lafayette, Louisville, Superior, Erie and Golden. Fully insured, 20+ years, 5-year workmanship warranty.</p>
-        <a class="fphone" href="tel:+17202085645">720-208-5645</a>
-        <p style="margin-top:14px;font-size:.86rem;color:var(--muted)">Also serving: <a href="https://painterhotline.com/" rel="nofollow">Painter Hotline</a> &middot; <a href="https://denverpaintcontractors.com/" rel="nofollow">Denver Paint Contractors</a> &middot; <a href="https://paintingbrighton.com/" rel="nofollow">Painting Brighton</a></p>
-      </div>
-      <div><h3>Painting services</h3><ul>
-        <li><a href="/interior-painting-boulder/">Interior painting</a></li>
-        <li><a href="/exterior-painting-boulder/">Exterior painting</a></li>
-        <li><a href="/cabinet-painting-boulder/">Cabinet painting</a></li>
-        <li><a href="/historic-home-painting-boulder/">Historic home painting</a></li>
-        <li><a href="/deck-fence-staining-boulder/">Deck &amp; fence staining</a></li>
-        <li><a href="/low-voc-painting-boulder/">Low-VOC &amp; eco painting</a></li>
-        <li><a href="/rental-turnover-painting-boulder/">Student rentals &amp; turnovers</a></li>
-        <li><a href="/commercial-painting-boulder/">Commercial &amp; HOA painting</a></li>
-      </ul></div>
-      <div><h3>Before you hire</h3><ul>
-        <li><a href="/painting-cost-boulder/">What painting costs</a></li>
-        <li><a href="/paint-colors-boulder/">Boulder color guide</a></li>
-        <li><a href="/boulder-painting-data/">Painting by the numbers</a></li>
-        <li><a href="/how-it-works/">How we work</a></li>
-        <li><a href="/warranty/">5-year warranty</a></li>
-        <li><a href="/faq/">Painting FAQ</a></li>
-        <li><a href="/service-areas/">Service areas</a></li>
-          <li><a href="/neighborhoods/">Boulder neighborhoods</a></li>
-        <li><a href="/about/">About us</a></li>
-      </ul></div>
-      <div><h3>Get in touch</h3>
-        <address>
-          Serving Boulder County, Colorado<br>
-          <a href="tel:+17202085645">720-208-5645</a><br>
-          <a class="eml" data-u="cXVvdGU=" data-d="cGFpbnRlcmhvdGxpbmUuY29t" href="/contact/">Email us</a><br>
-          Quotes 7 days a week
-        </address>
-        
-      </div>
-    </div>
-    <div class="foot-end">
-      <div>&copy; <span class="yr">2026</span> Boulder CO Painters. Fully insured. 5-year workmanship warranty.</div>
-      <div><a href="/service-areas/">Service areas</a> &middot; <a href="/faq/">FAQ</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="/estimator/" rel="nofollow">Team estimator</a></div>
-    </div>
-  </div>
-  <div class="heart-wrap"><span class="heart" aria-hidden="true">&#10084;</span> Need a website? <a href="https://eyetoad.com/" rel="nofollow noopener">Eye To Ad Media</a></div>
-</footer>
-<div class="tapbar"><a class="c" href="tel:+17202085645">Call 720-208-5645</a><a class="q" href="/contact/" data-quote>Free estimate</a></div><script>
-(function(){
-  document.querySelectorAll('.yr').forEach(function(y){y.textContent=new Date().getFullYear();});
-  var b=document.getElementById('burger'),tr=document.getElementById('tray');
-  if(b){b.addEventListener('click',function(){var o=tr.classList.toggle('open');b.setAttribute('aria-expanded',o);});}
-  document.querySelectorAll('.drop-btn').forEach(function(x){x.addEventListener('click',function(){var o=x.parentNode.classList.toggle('open');x.setAttribute('aria-expanded',o);});});
-  document.addEventListener('click',function(e){document.querySelectorAll('.drop.open').forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');d.querySelector('.drop-btn').setAttribute('aria-expanded','false');}});});
-  var sh=document.querySelector('.site-head'),tight=false;
-  if(sh){function hs(){var y=window.scrollY||0;if(!tight&&y>220){tight=true;sh.classList.add('tight');}else if(tight&&y<40){tight=false;sh.classList.remove('tight');}}window.addEventListener('scroll',hs,{passive:true});hs();}
-  function d(s){try{return atob(s||'');}catch(e){return '';}}
-  var at=String.fromCharCode(64),B=document.body.dataset;
-  document.querySelectorAll('a.eml').forEach(function(a){var v=d(a.getAttribute('data-u'))+at+d(a.getAttribute('data-d'));a.href='mailto:'+v;a.textContent=v;});
-  var t0=Date.now(),human=false;
-  ['keydown','pointerdown','touchstart'].forEach(function(ev){document.addEventListener(ev,function(){human=true;},{passive:true});});
-  var PH='+17202085645',PD='720-208-5645';
-  function shrink(file){
-    return new Promise(function(res){
-      if(!/^image\/(jpeg|png|webp)$/.test(file.type)){res(file.size<3e6?file:null);return;}
-      var img=new Image(),u=URL.createObjectURL(file);
-      img.onload=function(){var m=1600,w=img.width,h=img.height,s=Math.min(1,m/Math.max(w,h));
-        var c=document.createElement('canvas');c.width=Math.round(w*s);c.height=Math.round(h*s);
-        c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);
-        c.toBlob(function(bl){res(bl?new File([bl],'photo.jpg',{type:'image/jpeg'}):null);},'image/jpeg',.82);};
-      img.onerror=function(){URL.revokeObjectURL(u);res(null);};img.src=u;});
-  }
-  window.BCP={
-    tel:PH,disp:PD,
-    photos:function(input){var f=Array.prototype.slice.call((input&&input.files)||[],0,4);return Promise.all(f.map(shrink)).then(function(a){return a.filter(Boolean);});},
-    send:function(fd,subject){
-      if(!human)return Promise.resolve('blocked');
-      if(Date.now()-t0<3500)return Promise.resolve('fast');
-      fd.append('_subject','New lead — bouldercopainters.com | '+subject);fd.append('_captcha','false');fd.append('_template','table');
-      var url='https://'+d(B.h1)+d(B.h2)+'/ajax/'+d(B.u1)+d(B.u2)+at+d(B.d1)+d(B.d2);
-      return fetch(url,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
-        .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return (r.ok&&(j.success===true||j.success==='true'))?'ok':'unconfirmed';});})
-        .catch(function(){return 'fail';});
-    },
-    say:function(box,state){
-      var m={ok:['ok','Got it. We will call you back shortly to set up your free estimate. Need us faster? Call <a href="tel:'+PH+'">'+PD+'</a>.'],
-        fast:['warn','Give the form a moment, then send again.'],
-        unconfirmed:['warn','We could not confirm that went through. Please call <a href="tel:'+PH+'">'+PD+'</a> so nothing gets lost.'],
-        fail:['warn','The connection dropped before it sent. Call <a href="tel:'+PH+'">'+PD+'</a> and we will take it by phone.']}[state];
-      if(!m)return;box.className='msg '+m[0];box.innerHTML=m[1];
-    }
-  };
-  document.querySelectorAll('form[data-lead]').forEach(function(f){
-    f.addEventListener('submit',function(e){
-      e.preventDefault();
-      var box=f.querySelector('.msg'),btn=f.querySelector('button[type=submit]');
-      var hp=f.querySelector('input[name="_honey"]');if(hp&&hp.value)return;
-      var nm=f.querySelector('[name="user_name"]'),ph=f.querySelector('[name="user_phone"]');
-      if(!nm.value.trim()||ph.value.replace(/\D/g,'').length<10){box.className='msg warn';box.textContent='Add your name and a 10-digit phone number so we can call you back.';(nm.value.trim()?ph:nm).focus();return;}
-      var label=btn.textContent;btn.textContent='Sending...';btn.disabled=true;
-      var fileIn=f.querySelector('input[type=file]');
-      BCP.photos(fileIn).then(function(pics){
-        var fd=new FormData(f),groups={};
-        if(fileIn)fd.delete(fileIn.name);
-        pics.forEach(function(p,i){fd.append('photo_'+(i+1),p);});
-        f.querySelectorAll('input[type=checkbox]:checked').forEach(function(c){(groups[c.name]=groups[c.name]||[]).push(c.value);});
-        Object.keys(groups).forEach(function(k){fd.delete(k);fd.set(k,groups[k].join(', '));});
-        return BCP.send(fd,f.getAttribute('data-subject'));
-      }).then(function(state){
-        if(state==='blocked'){btn.textContent=label;btn.disabled=false;return;}
-        BCP.say(box,state);
-        if(state==='ok'){f.reset();btn.textContent='Sent';}else{btn.textContent=label;btn.disabled=false;}
-      });
-    });
-  });
+<section class="sheet tint"><div class="wrap"><span class="kicker">Straight answers</span><h2>Questions about these figures</h2><div class="qa">
+<details><summary>When can exteriors be painted in Boulder?</summary><div class="ans">For most products, from mid-May through September, with early May and early October workable only with low-temperature products and a good forecast. NOAA normals for the Boulder station put the median last spring freeze on May 6 and the median first fall freeze on October 5, and average lows reach 50&deg;F only in June, July and August.</div></details>
+<details><summary>How many Boulder homes are old enough for the lead rule?</summary><div class="ans">The Census reports that 55.4% of housing units in the city of Boulder were built before 1980 (ACS 2020&ndash;2024). The federal rule covers homes built before 1978, so the true share is a little lower, but it is still more than half in the city and over 90% in Ward and Eldorado Springs.</div></details>
+<details><summary>Why not publish your own prices?</summary><div class="ans">Because a per-square-foot number would be wrong for most houses. Preparation, trim, access and the age of the paint drive a Boulder estimate far more than floor area. We show what independent guides report, with their dates, and give you a written estimate for the actual house.</div></details>
+<details><summary>Where do the numbers come from?</summary><div class="ans">Weather figures come from NOAA&rsquo;s 1991&ndash;2020 climate normals for the Boulder station and the NOAA Physical Sciences Laboratory frost record. Housing figures come from the Census Bureau&rsquo;s American Community Survey 2020&ndash;2024 5-year estimates. Cost ranges come from HomeBlue (2022) and Fixr (2026). Each source is listed with a link above.</div></details>
+</div></div></section>
+<section class="ask" id="estimate" aria-labelledby="boulderpai-h"><div class="wrap"><div class="ask-grid"><div><span class="kicker" style="color:var(--sand);border-color:var(--sand)">No obligation</span><h2 id="boulderpai-h">Get a written estimate</h2><p class="dek">Send photos and we will price it without a visit where we can. Peeling, water damage or a landmark property gets a walkthrough first.</p><p class="note">Every estimate names the surfaces, the preparation steps, the exact product line and sheen, the coat count, the schedule and the warranty.</p><p class="note">Prefer to talk? <a href="tel:+17202085645" style="color:#fff">720-208-5645</a>, seven days.</p></div><form data-lead data-subject="ESTIMATE: Boulder painting data" novalidate><input type="hidden" name="source_page" value="bouldercopainters.com/boulder-painting-data/"><div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div><div class="fset"><div class="fld"><label for="boulderpai-n">Your name (required)</label><input id="boulderpai-n" name="user_name" autocomplete="name" required></div><div class="fld"><label for="boulderpai-p">Phone (required)</label><input id="boulderpai-p" name="user_phone" type="tel" inputmode="tel" autocomplete="tel" required></div><div class="fld"><label for="boulderpai-e">Email</label><input id="boulderpai-e" name="user_email" type="email" autocomplete="email"></div><div class="fld"><label for="boulderpai-z">ZIP code</label><input id="boulderpai-z" name="user_zip" inputmode="numeric" autocomplete="postal-code"></div><div class="fld"><label for="boulderpai-s">What needs painting</label><select id="boulderpai-s" name="project_type"><option>Interior</option><option>Exterior</option><option>Interior and exterior</option><option>Historic or landmark home</option><option>Kitchen cabinets</option><option>Deck, fence or timber</option><option>Rental turnover</option><option>Commercial or HOA</option><option>Not sure yet</option></select></div><div class="fld"><label for="boulderpai-w">When</label><select id="boulderpai-w" name="timeline"><option>As soon as you can</option><option>Next month</option><option>This season</option><option>Next spring</option><option>Just pricing it out</option></select></div><div class="fld wide"><label for="boulderpai-y">Year the home was built, if you know it</label><input id="boulderpai-y" name="year_built" inputmode="numeric" autocomplete="off"></div><div class="fld wide"><label for="boulderpai-f">Photos (up to 4)</label><input id="boulderpai-f" name="photos" type="file" accept="image/*" multiple></div><div class="fld wide"><label for="boulderpai-m">Anything else</label><textarea id="boulderpai-m" name="user_message" autocomplete="off" placeholder="Rooms, colors you are considering, HOA or Landmarks requirements, access notes."></textarea></div></div><button type="submit" class="btn btn-sand" style="width:100%;justify-content:center;margin-top:14px">Send my request</button><div class="msg" role="status" aria-live="polite"></div></form></div></div></section></main><footer class="foot"><div class="wrap"><div class="foot-grid"><div><span class="foot-logo"><img src="/images/logo-240.webp" alt="Boulder CO Painters" width="160" height="80" loading="lazy" decoding="async"></span><p class="foot-blurb">House painting across Boulder County: Boulder, Longmont, Louisville, Lafayette, Superior, Erie, Niwot, Gunbarrel, Lyons, Nederland, Eldorado Springs, Jamestown and Ward.</p><p class="foot-tel"><a href="tel:+17202085645">720-208-5645</a></p></div><div><h2 class="foot-h">What we paint</h2><ul><li><a href="/interior-house-painting/">Interior house painting</a></li><li><a href="/exterior-house-painting/">Exterior house painting</a></li><li><a href="/historic-home-painting/">Historic &amp; landmark homes</a></li><li><a href="/kitchen-cabinet-refinishing/">Kitchen cabinet refinishing</a></li><li><a href="/deck-and-fence-staining/">Deck &amp; fence staining</a></li><li><a href="/zero-voc-painting/">Zero-VOC &amp; healthy-home</a></li><li><a href="/rental-turnover-painting/">Rental turnovers</a></li><li><a href="/commercial-and-hoa-painting/">Commercial &amp; HOA</a></li></ul></div><div><h2 class="foot-h">Before you hire</h2><ul><li><a href="/what-painting-costs-in-boulder/">What painting costs</a></li><li><a href="/boulder-painting-data/">Boulder painting data</a></li><li><a href="/painting-season-and-altitude/">Season &amp; altitude</a></li><li><a href="/lead-safe-painting-older-homes/">Pre-1978 homes &amp; lead</a></li><li><a href="/boulder-color-guide/">Color guide</a></li><li><a href="/paint-sheen-guide/">Paint sheen guide</a></li><li><a href="/our-warranty/">The 5-year warranty</a></li><li><a href="/questions/">Questions</a></li></ul></div><div><h2 class="foot-h">Boulder County</h2><ul><li><a href="/where-we-work/">Where we work</a></li><li><a href="/boulder-neighborhoods/">Neighborhoods</a></li><li><a href="/who-we-are/">Who we are</a></li><li><a href="/get-an-estimate/">Get an estimate</a></li><li><a href="/terms-of-service/">Terms of service</a></li></ul></div></div><div class="foot-end"><div>&copy; 2026 Boulder CO Painters, a trade name of Search Converts LLC (dba Painter Hotline). Fully insured.</div><div>5-year written workmanship warranty &middot; Sherwin-Williams, PPG &amp; Behr</div></div><div class="heart-bar"><span class="heart" aria-hidden="true">&#10084;</span> Need a website? <a href="https://eyetoad.com/" rel="nofollow noopener">Eye To Ad Media</a></div></div></footer><div class="bar"><a href="tel:+17202085645">Call 720-208-5645</a><a href="/get-an-estimate/">Free estimate</a></div><script>(function(){
+var m=document.getElementById('tray'),h=document.getElementById('ham');
+if(h)h.addEventListener('click',function(){var o=m.classList.toggle('on');h.setAttribute('aria-expanded',o);h.setAttribute('aria-label',o?'Close menu':'Open menu');});
+document.querySelectorAll('.pop').forEach(function(p){var b=p.querySelector('button');
+b.addEventListener('click',function(e){e.stopPropagation();var o=p.hasAttribute('data-open');shut();if(!o){p.setAttribute('data-open','');b.setAttribute('aria-expanded','true');}});});
+function shut(){document.querySelectorAll('.pop').forEach(function(q){q.removeAttribute('data-open');q.querySelector('button').setAttribute('aria-expanded','false');});}
+document.addEventListener('click',shut);document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});
+if(Date.now()>Date.parse('2026-11-01T06:00:00Z'))document.querySelectorAll('[data-offer]').forEach(function(x){x.remove();});
+document.querySelectorAll('.eml').forEach(function(a){try{var u=atob(a.dataset.u),d=atob(a.dataset.d);a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;}catch(e){}});
+var t0=Date.now(),touched=false;
+['keydown','pointerdown','touchstart'].forEach(function(ev){document.addEventListener(ev,function(){touched=true;},{once:true,passive:true});});
+function shrink(file){return new Promise(function(res){if(!/^image\//.test(file.type)){res(null);return;}
+var img=new Image(),u=URL.createObjectURL(file);img.onload=function(){var s=Math.min(1,1600/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);
+c.toBlob(function(b){res(b?new File([b],(file.name||'photo').replace(/\.\w+$/,'')+'.jpg',{type:'image/jpeg'}):null);},'image/jpeg',0.82);};img.onerror=function(){res(null);};img.src=u;});}
+window.BCP={
+photos:function(input){if(!input||!input.files||!input.files.length)return Promise.resolve([]);return Promise.all([].slice.call(input.files,0,4).map(shrink)).then(function(l){return l.filter(Boolean);});},
+send:function(fd,subj){
+if(Date.now()-t0<4000||!touched)return Promise.resolve('fast');
+var b=document.body;
+try{var host=atob(b.dataset.h1)+atob(b.dataset.h2),box=atob(b.dataset.u1)+atob(b.dataset.u2)+'@'+atob(b.dataset.d1)+atob(b.dataset.d2);
+fd.append('_subject','New lead: bouldercopainters.com | '+subj);fd.append('_captcha','false');fd.append('_template','table');
+return fetch('https://'+host+'/ajax/'+box,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+.then(function(r){return r.json().catch(function(){return {};}).then(function(j){return (r.ok&&String(j.success)==='true')?'ok':'fail';});})
+.catch(function(){return 'fail';});
+}catch(e){return Promise.resolve('fail');}}};
+document.querySelectorAll('form[data-lead]').forEach(function(f){var busy=false;
+f.addEventListener('submit',function(e){e.preventDefault();if(busy)return;
+var box=f.querySelector('.msg');box.className='msg';box.textContent='';
+if(f.querySelector('.hp input').value)return;
+var nm=f.querySelector('[name="user_name"]'),ph=f.querySelector('[name="user_phone"]');
+if(!nm.value.trim()||ph.value.replace(/\D/g,'').length<10){box.className='msg bad';box.textContent='Add your name and a 10-digit phone number.';(nm.value.trim()?ph:nm).focus();return;}
+var btn=f.querySelector('button[type=submit]'),lab=btn.textContent;busy=true;btn.disabled=true;btn.textContent='Sending...';
+var fd=new FormData(f),fin=f.querySelector('input[type=file]');fd.delete('photos');
+BCP.photos(fin).then(function(list){list.forEach(function(p,i){fd.append('photo_'+(i+1),p);});return BCP.send(fd,f.getAttribute('data-subject'));}).then(function(s){
+busy=false;btn.disabled=false;btn.textContent=lab;
+if(s==='ok'){box.className='msg ok';box.textContent='Got it. Your request is in, and we will call you back to set up the estimate.';f.reset();}
+else if(s==='fast'){box.className='msg bad';box.textContent='Give the form a moment, then send again.';}
+else{box.className='msg bad';box.innerHTML='That did not go through. Please call <a href="tel:+17202085645">720-208-5645</a> so your request is not lost.';}
+});});});
 })();
-</script>
-<script src="/flat.js" defer></script>
-<script src="/lead-source.js" defer></script></body>
-</html>
+</script><script>(function(){var d=0;function go(){if(d)return;d=1;var s=document.createElement("script");s.src="/flat.js";document.body.appendChild(s);}["pointerdown","keydown","scroll","touchstart"].forEach(function(e){addEventListener(e,go,{once:true,passive:true});});setTimeout(go,6000);})();</script><script src="/lead-source.js" defer></script></body></html>

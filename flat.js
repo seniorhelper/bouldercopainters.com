@@ -1,4 +1,4 @@
-/* Painter Hotline - Flat, us operator */
+/* Flat, the Boulder CO Painters chat helper */
 (function () {
   "use strict";
   var TEL = "+17202085645", DISP = "720-208-5645";
@@ -57,7 +57,7 @@
 
   var css = document.createElement('style');
   css.textContent = [
-    '.fl-launch{position:fixed;right:16px;bottom:16px;z-index:980;display:flex;flex-direction:column;align-items:flex-end;gap:4px}',
+    '.fl-launch{position:fixed;right:16px;bottom:16px;z-index:980;display:flex;flex-direction:column;align-items:flex-end;gap:4px;pointer-events:none}.fl-launch>*{pointer-events:auto}',
     '.fl-btn{width:148px;height:170px;background:none;border:0;padding:0;cursor:pointer;filter:drop-shadow(0 10px 20px rgba(7,51,111,.32));transition:transform .2s}',
     '.fl-btn:hover{transform:translateY(-4px) rotate(-2deg)}',
     '.fl-btn svg{width:100%;height:100%;display:block}',
@@ -78,7 +78,7 @@
     '.fl-tip button{position:absolute;top:3px;right:5px;border:0;background:none;font-size:1.05rem;color:#5d6b7e;cursor:pointer;line-height:1}',
     '.fl-dock{position:fixed;right:0;top:44%;transform:translateY(-50%);z-index:975;display:flex;flex-direction:column;gap:8px;align-items:flex-end}',
     '.fl-dock button{display:flex;align-items:center;gap:9px;background:#07336f;color:#fff;border:0;border-radius:12px 0 0 12px;padding:12px 14px 12px 12px;font:700 .86rem Inter,system-ui,sans-serif;cursor:pointer;box-shadow:-4px 6px 18px rgba(7,51,111,.26)}',
-    '.fl-dock button.alt{background:#ef6c12}',
+    '.fl-dock button.alt{background:#a84c0b}',
     '.fl-dock button:hover{filter:brightness(1.1);padding-right:18px}',
     '.fl-dock .mini{width:30px;height:34px;flex-shrink:0}',
     '.fl-dock .mini svg{width:100%;height:100%}',
@@ -91,8 +91,8 @@
     '.fl-head i::before{content:"";width:8px;height:8px;border-radius:50%;background:#2ee07a;box-shadow:0 0 0 0 rgba(46,224,122,.7);animation:flblink 2.2s ease-in-out infinite}',
     '.fl-head .call{margin-left:auto;background:#ffc233;color:#3a2b00;border:0;border-radius:8px;padding:8px 10px;font:700 .82rem Inter,system-ui,sans-serif;text-decoration:none}',
     '.fl-head .x{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:6px 9px;cursor:pointer;font-weight:700}',
-    '.fl-tape{height:5px;background:linear-gradient(90deg,#ef6c12,#ffc233,#0f7e74,#0b5ed7);}',
-    '.fl-prog{height:4px;background:#e7edf5}.fl-prog i{display:block;height:100%;width:0;background:#ef6c12;transition:width .35s}',
+    '.fl-tape{height:5px;background:linear-gradient(90deg,#a84c0b,#ffc233,#0f7e74,#0b5ed7);}',
+    '.fl-prog{height:4px;background:#e7edf5}.fl-prog i{display:block;height:100%;width:0;background:#a84c0b;transition:width .35s}',
     '.fl-body{flex:1;overflow-y:auto;padding:14px;background:#f4f7fb;font:1rem/1.55 Inter,system-ui,sans-serif;color:#122033}',
     '.fl-msg{max-width:88%;padding:10px 13px;border-radius:14px;margin-bottom:10px;font-size:.95rem}',
     '.fl-msg.bot{background:#fff;border:1px solid #dce3ec;border-bottom-left-radius:4px}',
@@ -101,7 +101,7 @@
     '.fl-opts{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:#fff;border-top:1px solid #dce3ec}',
     '.fl-opt{background:#fff;border:1px solid #0a4fae;color:#0a4fae;border-radius:9px;padding:8px 11px;font:600 .88rem Inter,system-ui,sans-serif;cursor:pointer}',
     '.fl-opt:hover{background:#0a4fae;color:#fff}',
-    '.fl-opt.hot{background:#ef6c12;border-color:#ef6c12;color:#fff}',
+    '.fl-opt.hot{background:#a84c0b;border-color:#a84c0b;color:#fff}',
     '.fl-foot{display:flex;gap:7px;padding:10px 14px;border-top:1px solid #dce3ec;background:#fff}',
     '.fl-foot input{flex:1;border:1px solid #dce3ec;border-radius:9px;padding:10px;font:1rem Inter,system-ui,sans-serif;background:#f4f7fb}',
     '.fl-foot button{background:#ffc233;border:0;border-radius:9px;padding:10px 14px;font-weight:700;color:#3a2b00;cursor:pointer}',
@@ -109,7 +109,7 @@
     '.fl-f label{display:block;font:600 .84rem Inter,system-ui,sans-serif;color:#122033;margin:9px 0 4px}',
     '.fl-f input,.fl-f select,.fl-f textarea{width:100%;border:1px solid #dce3ec;border-radius:9px;padding:10px;font:1rem Inter,system-ui,sans-serif;background:#f4f7fb;color:#122033}',
     '.fl-f .duo{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}',
-    '.fl-f button.go{width:100%;margin-top:12px;background:#ef6c12;color:#fff;border:0;border-radius:9px;padding:13px;font:700 1rem Inter,system-ui,sans-serif;cursor:pointer}',
+    '.fl-f button.go{width:100%;margin-top:12px;background:#a84c0b;color:#fff;border:0;border-radius:9px;padding:13px;font:700 1rem Inter,system-ui,sans-serif;cursor:pointer}',
     '.fl-note{font-size:.8rem;color:#5d6b7e;margin-top:8px}',
     '.fl-ticket{background:#07336f;color:#fff;border-radius:12px;padding:16px;margin-bottom:12px;font-family:Inter,system-ui,sans-serif}',
     '.fl-ticket b{display:block;font-size:1.35rem;color:#ffc233;letter-spacing:.04em}',
@@ -117,8 +117,8 @@
     '.fl-ticket .ln:last-of-type{border-bottom:0}',
     '.fl-ticket small{display:block;margin-top:8px;color:rgba(255,255,255,.82);font-size:.82rem}',
     '@media (max-width:640px){.fl-panel{right:6px;left:6px;width:auto;bottom:74px;top:60px;height:auto;max-height:none}',
-    '.fl-launch{right:4px;bottom:74px}.fl-btn{width:104px;height:120px}.fl-tip{font-size:.84rem;max-width:176px;margin-right:12px}',
-    '.fl-dock{top:150px;bottom:auto;transform:none}.fl-dock button{padding:10px 10px 10px 8px;font-size:.74rem}.fl-dock .mini{width:24px;height:28px}}',
+    '.fl-launch{right:2px;bottom:66px}.fl-btn{width:72px;height:84px}.fl-tip{font-size:.84rem;max-width:176px;margin-right:12px}',
+    '.fl-dock{display:none}}',
     '@media (prefers-reduced-motion:reduce){.fl-specs,.fl-armL,.fl-armR,.fl-drip,.fl-bark,.fl-led{animation:none}}'
   ].join('');
   document.head.appendChild(css);
@@ -136,13 +136,13 @@
 
   function openPanel(mode) {
     if (!panel) {
-      panel = el('<div class="fl-panel" role="dialog" aria-modal="false" aria-label="Painter Hotline chat">' +
+      panel = el('<div class="fl-panel" role="dialog" aria-modal="false" aria-label="Chat with Flat">' +
         '<div class="fl-head"><span class="av">' + brush('') + '</span><span><b>Flat</b><i>Boulder County</i></span>' +
-        '<a class="call" href="tel:' + TEL + '">' + DISP + '</a><button class="x" aria-label="Close us chat">X</button></div>' +
+        '<a class="call" href="tel:' + TEL + '">' + DISP + '</a><button class="x" aria-label="Close chat">X</button></div>' +
         '<div class="fl-tape"></div><div class="fl-prog"><i id="flProg"></i></div>' +
         '<div class="fl-body" id="flBody"></div><div class="fl-opts" id="flOpts"></div>' +
-        '<div class="fl-foot"><label class="sr" for="flIn">Type a message to us</label>' +
-        '<input id="flIn" placeholder="Ask us anything..." autocomplete="off"><button id="flSend">Send</button></div></div>');
+        '<div class="fl-foot"><label class="sr" for="flIn">Type a question</label>' +
+        '<input id="flIn" placeholder="Ask a painting question..." autocomplete="off"><button id="flSend">Send</button></div></div>');
       document.body.appendChild(panel);
       panel.querySelector('.x').addEventListener('click', closePanel);
       panel.querySelector('#flSend').addEventListener('click', typed);
@@ -198,26 +198,26 @@
     [/\b(proposal|contract|paperwork|sign|agreement|estimate in writing)\b/i, 'Everything goes in writing: surfaces, preparation steps, product line and sheen, coat counts, schedule, payment terms and the warranty. You can sign it electronically right on your phone, and a PDF copy lands in your inbox.'],
     [/\b(schedule|book|dates|when can you start|availability)\b/i, 'Depends on the season and the crew. Interiors are usually easier to place; exterior calendars tighten from late spring through early fall. Tell me the project and your preferred week and I will get a real answer back to you rather than a guess.'],
     [/\b(think about it|not ready|later|hold off)\b/i, 'Completely fair. Usually one specific thing is unresolved: price, timing, the crew, or whether the scope is right. Which one is it? I would rather answer it now than leave you guessing.'],
-    [/\b(cost|price|pricing|how much|rate|charge|expensive)\b/i, 'Published 2026 Front Range data puts exterior painting around <strong>$1.55 to $4.10 per square foot</strong>, interior around <strong>$1.50 to $3.50</strong>, and cabinets between <strong>$2,000 and $8,000</strong>. The <a href="/pricing/">pricing page</a> has a calculator, or I can run a quick quote with you right now.'],
-    [/\b(area|serve|cover|location|city|town|near me|where)\b/i, 'We covers the whole Front Range: Denver metro, the south metro through Castle Rock, Boulder County and Longmont, the I-25 towns, the eastern plains out to Fort Morgan, and the mountains from Evergreen to Breckenridge. Find yours on the <a href="/painters-near-me/">locations page</a>.'],
-    [/\b(mountain|breckenridge|frisco|dillon|silverthorne|evergreen|georgetown|idaho springs|altitude)\b/i, 'Yes, we paint the mountain towns. Higher elevation means harsher UV, a shorter season and more stain work, so those projects book earlier in the year. Tell me the town and I will tell you what the window looks like.'],
+    [/\b(cost|price|pricing|how much|rate|charge|expensive)\b/i, 'For a published reference point, HomeBlue&rsquo;s Boulder guides (2022) put house painting at about <strong>$1.30 to $3.10 per square foot</strong>, and Fixr&rsquo;s 2026 figures put painting a kitchen&rsquo;s cabinets at <strong>$2,500 to $6,500</strong> nationally. Condition, trim, access and the age of the house move a Boulder price more than size. The <a href="/what-painting-costs-in-boulder/">cost page</a> has the details, or I can start a quick quote so you get a written number.'],
+    [/\b(area|serve|cover|location|city|town|near me|where)\b/i, 'We work in Boulder County only: Boulder, Longmont, Louisville, Lafayette, Superior, Erie, Niwot, Gunbarrel, Lyons, Nederland, Eldorado Springs, Jamestown and Ward. See <a href="/where-we-work/">where we work</a>.'],
+    [/\b(mountain|nederland|ward|jamestown|canyon|peak to peak|altitude|elevation)\b/i, 'Yes, we paint the Boulder County mountain towns. Nederland sits near 8,200 feet and Ward above 9,500, so the exterior season there is the middle of summer and stain work is common. More on <a href="/painting-season-and-altitude/">season and altitude</a>.'],
     [/\b(warranty|guarantee)\b/i, 'Every project carries a <strong>5-year workmanship warranty</strong> in writing, plus the manufacturer warranty on the Sherwin-Williams, PPG or Behr coating. Details on the <a href="/our-warranty/">warranty page</a>.'],
     [/\b(insur|licen|bonded)\b/i, 'Fully insured, with a certificate provided at the quote. Colorado issues no statewide painting license, so insurance and a written scope are what you should ask any painter to produce.'],
-    [/\b(discount|deal|offer|coupon|special|sale|25)\b/i, 'Right now: <strong>25% off projects booked by October 31, 2026</strong>. Labor only, paint and materials not included. See the <a href="/offers/">offer page</a>.'],
+    [/\b(discount|deal|offer|coupon|special|sale|25)\b/i, 'Right now: <strong>25% off projects booked by October 31, 2026</strong>. Labor only, paint and materials not included. Ask for it when you <a href="/get-an-estimate/">request an estimate</a>.'],
     [/\b(peel|flak|bubbl|chalk|fail|crack|bad job|redo)\b/i, 'That is one of our most common calls. Peeling usually traces to moisture, contamination, incompatible layers or missing primer, and the fix depends on which. Send photos through the quick quote and we will tell you what we see.'],
-    [/\b(cabinet|kitchen)\b/i, 'Cabinets get degreased, scuff sanded, bonding primed and sprayed with a cabinet-grade finish. Typically $2,000 to $8,000 depending on door count. More on <a href="/cabinet-painting/">cabinet painting</a>.'],
-    [/\b(deck|fence|stain)\b/i, 'Decks and fences get cleaned, brightened, sanded where needed and sealed with products chosen for Colorado sun. More on <a href="/deck-staining/">deck and fence staining</a>.'],
-    [/\b(interior|inside|room|wall|ceiling|basement)\b/i, 'Interior work runs year-round: walls, ceilings, trim, doors and basements, everything protected with daily cleanup. See <a href="/interior-painting/">interior painting</a>.'],
-    [/\b(exterior|outside|siding|stucco|brick|trim)\b/i, 'Exteriors get washed, scraped, sanded, caulked and spot-primed before any finish coat. See <a href="/exterior-painting/">exterior painting</a>.'],
-    [/\b(commercial|office|retail|warehouse|tenant|property manager)\b/i, 'We handle offices, retail, warehouses, HOAs and multi-unit property, phased or after hours. See <a href="/commercial-painting/">commercial painting</a>.'],
-    [/\b(hoa|approval|covenant|architectural)\b/i, 'Most Front Range communities require exterior color approval. We pull the approved palette, prepare samples and handle the submission so the schedule holds.'],
-    [/\b(when|season|winter|cold|weather|spring|time of year)\b/i, 'Exteriors run best mid-May through early October down here. Denver averages its last spring freeze near May 5 and first fall freeze near October 7. Interiors run all year, and mountain seasons are shorter at both ends.'],
+    [/\b(cabinet|kitchen)\b/i, 'Cabinets get degreased, scuff sanded, primed with a primer made to grip factory finishes, and sprayed with a hard cabinet enamel. Fixr&rsquo;s 2026 national figures put a kitchen at $2,500 to $6,500. More on <a href="/kitchen-cabinet-refinishing/">cabinet refinishing</a>.'],
+    [/\b(deck|fence|stain)\b/i, 'Decks and fences get cleaned, brightened, sanded where needed and sealed with products chosen for Colorado sun. More on <a href="/deck-and-fence-staining/">deck and fence staining</a>.'],
+    [/\b(interior|inside|room|wall|ceiling|basement)\b/i, 'Interior work runs year-round: walls, ceilings, trim, doors and basements, everything protected with daily cleanup. See <a href="/interior-house-painting/">interior painting</a>.'],
+    [/\b(exterior|outside|siding|stucco|brick|trim)\b/i, 'Exteriors get washed, scraped, sanded, caulked and spot-primed before any finish coat. See <a href="/exterior-house-painting/">exterior painting</a>.'],
+    [/\b(commercial|office|retail|warehouse|tenant|property manager)\b/i, 'We handle offices, retail, warehouses, HOAs and multi-unit property, phased or after hours. See <a href="/commercial-and-hoa-painting/">commercial and HOA painting</a>.'],
+    [/\b(hoa|approval|covenant|architectural)\b/i, 'Many Boulder County neighborhoods have covenants with approved palettes, and in the city of Boulder the ten historic districts and individual landmarks need a Landmark Alteration Certificate for exterior changes. We prepare samples and the submission before scheduling. More on <a href="/historic-home-painting/">historic homes</a>.'],
+    [/\b(when|season|winter|cold|weather|spring|time of year)\b/i, 'Exteriors run mid-May through September in Boulder. NOAA normals for the Boulder station put the median last spring freeze on May 6 and the first fall freeze on October 5. Interiors run all year, and the mountain towns have a shorter season. See <a href="/painting-season-and-altitude/">season and altitude</a>.'],
     [/\b(how long|days|timeline|schedule|fast)\b/i, 'Most home exteriors take 3 to 5 working days, a few interior rooms 1 to 2 days, and cabinets 3 to 5 days because of cure time between coats.'],
     [/\b(brand|sherwin|ppg|behr|product|paint type)\b/i, 'Sherwin-Williams, PPG and Behr, chosen by surface and exposure. The exact line and sheen are named in your written quote and never swapped afterward.'],
-    [/\b(lead|1978|old house|historic)\b/i, 'Homes built before 1978 may contain lead paint, and federal EPA rules require certified firms and lead-safe work practices when disturbing those surfaces. Tell us the year built and we plan for it.'],
-    [/\b(voc|smell|odor|pet|kid|safe|fume)\b/i, 'Most interior paints today are water-based and low in VOC, and Colorado tightened VOC limits in 2020. Zero-VOC options are available if anyone in the home is sensitive.'],
+    [/\b(lead|1978|old house|historic)\b/i, 'Homes built before 1978 may contain lead paint, and federal EPA rules require certified firms and lead-safe work practices when disturbing those surfaces. Tell us the year built and we plan for it. More on <a href="/lead-safe-painting-older-homes/">pre-1978 homes</a>.'],
+    [/\b(voc|smell|odor|pet|kid|safe|fume)\b/i, 'Most interior paints today are water-based and low in VOC; Colorado&rsquo;s coating limits took effect in 2020. Zero-VOC options are available on any interior job. More on <a href="/zero-voc-painting/">zero-VOC painting</a>.'],
     [/\b(human|person|talk|call|phone|speak)\b/i, 'Easiest way is to call <a href="tel:' + TEL + '">' + DISP + '</a>, or pick "call me back" and I will put you in the queue with a time window.'],
-    [/\b(who are you|about (you|the company|painter hotline)|company|us)\b/i, 'Painter Hotline is a Colorado painting company covering the Front Range from one number, 20+ years of experience, fully insured, 5-year workmanship warranty. More on the <a href="/who-we-are/">about page</a>.']
+    [/\b(who are you|about (you|the company)|company)\b/i, 'Boulder CO Painters is a Boulder County painting company with 20+ years of Colorado experience, full insurance and a written 5-year workmanship warranty. More on the <a href="/who-we-are/">about page</a>.']
   ];
 
   function lookup(t) { for (var i = 0; i < KB.length; i++) if (KB[i][0].test(t)) return KB[i][1]; return null; }
@@ -248,7 +248,7 @@
 
   /* ---------- value building ---------- */
   function whyUs() {
-    log.push('Visitor asked why Painter Hotline');
+    log.push('Visitor asked why Boulder CO Painters');
     say('Short version, and none of it is hard to verify.');
     setTimeout(function () {
       say('<strong>Specialized crews.</strong> Exterior, interior, cabinets and commercial are different skills. You get the crew that does your kind of work every day, not whoever was free.');
@@ -373,12 +373,12 @@
     ]);
   }
   function qZone() {
-    prog(.68); say('<strong>Where is the property?</strong> Region affects scheduling and sometimes product choice.');
+    prog(.68); say('<strong>Where is the property?</strong> Elevation changes the season and sometimes the product.');
     opts([
-      { label: 'Denver metro', fn: function () { Q.z = 1; answers.region = 'Denver metro'; qWhen(); } },
-      { label: 'North or Boulder County', fn: function () { Q.z = 1.02; answers.region = 'North / Boulder County'; qWhen(); } },
-      { label: 'Eastern plains', fn: function () { Q.z = 1.04; answers.region = 'Eastern plains'; qWhen(); } },
-      { label: 'Foothills or mountains', fn: function () { Q.z = 1.12; answers.region = 'Foothills or mountain town'; qWhen(); } }
+      { label: 'City of Boulder', fn: function () { answers.region = 'City of Boulder'; qWhen(); } },
+      { label: 'Longmont, Niwot or Gunbarrel', fn: function () { answers.region = 'Longmont / Niwot / Gunbarrel'; qWhen(); } },
+      { label: 'Louisville, Lafayette, Superior or Erie', fn: function () { answers.region = 'Louisville / Lafayette / Superior / Erie'; qWhen(); } },
+      { label: 'Lyons, canyons or mountains', fn: function () { answers.region = 'Lyons / canyons / mountain towns'; qWhen(); } }
     ]);
   }
   function qWhen() {
@@ -396,28 +396,17 @@
   }
   function result() {
     prog(.9);
-    var c = Q.c || 1, z = Q.z || 1, lo, hi;
-    if (Q.t === 'ext') { lo = Q.sq * 1.55 * (Q.h || 1); hi = Q.sq * 4.10 * (Q.h || 1); }
-    else if (Q.t === 'int') { lo = Q.sq * 1.50; hi = Q.sq * 3.50; }
-    else if (Q.t === 'cab') { lo = 1800 + (Q.d - 20) * 62; hi = 3600 + (Q.d - 20) * 126; }
-    else if (Q.t === 'deck') { lo = Q.sq * 2.10; hi = Q.sq * 4.60; }
-    else { lo = 0; hi = 0; }
     Q.ticket = ticket();
     answers.ticket = Q.ticket;
-    if (lo) {
-      lo = Math.round(lo * c * z / 50) * 50; hi = Math.round(hi * c * z / 50) * 50;
-      var lod = Math.round(lo * .75 / 50) * 50, hid = Math.round(hi * .75 / 50) * 50;
-      answers.ballpark = '$' + lo.toLocaleString() + ' - $' + hi.toLocaleString();
-      answers.ballpark_after_discount = '$' + lod.toLocaleString() + ' - $' + hid.toLocaleString();
-      say('<div class="fl-ticket"><b>$' + lo.toLocaleString() + ' - $' + hi.toLocaleString() + '</b>' +
-        '<span class="ln"><span>Project</span><span>' + (answers.project || '') + '</span></span>' +
-        '<span class="ln"><span>Scope</span><span>' + (answers.size || answers.scope || '') + '</span></span>' +
-        '<span class="ln"><span>Region</span><span>' + (answers.region || '') + '</span></span>' +
-        '<span class="ln"><span>Ticket</span><span>' + Q.ticket + '</span></span>' +
-        '<small>Published 2026 Front Range range for this scope. With 25% off labor on projects booked by October 31, 2026, most of this scope lands around <strong>$' + lod.toLocaleString() + ' - $' + hid.toLocaleString() + '</strong>. Paint and materials are not included in the discount.</small></div>');
-    } else {
-      say('<div class="fl-ticket"><b>Walkthrough first</b><span class="ln"><span>Project</span><span>' + (answers.project || '') + '</span></span><span class="ln"><span>Ticket</span><span>' + Q.ticket + '</span></span><small>Commercial scopes get measured on site so the bid is line-item accurate rather than a guess.</small></div>');
-    }
+    var ref = Q.t === 'cab' ? 'Fixr&rsquo;s 2026 national figures put painting a kitchen&rsquo;s cabinets at $2,500 to $6,500.' :
+      (Q.t === 'ext' || Q.t === 'int') ? 'For reference, HomeBlue&rsquo;s Boulder guide (2022) put house painting at about $1.30 to $3.10 per square foot, and costs have risen since.' : '';
+    say('<div class="fl-ticket"><b>Written estimate</b>' +
+      '<span class="ln"><span>Project</span><span>' + (answers.project || '') + '</span></span>' +
+      '<span class="ln"><span>Scope</span><span>' + (answers.size || answers.scope || '') + '</span></span>' +
+      (answers.condition ? '<span class="ln"><span>Condition</span><span>' + answers.condition + '</span></span>' : '') +
+      '<span class="ln"><span>Area</span><span>' + (answers.region || '') + '</span></span>' +
+      '<span class="ln"><span>Ticket</span><span>' + Q.ticket + '</span></span>' +
+      '<small>I will not guess at a dollar figure for a house I have not seen. ' + ref + ' Your written estimate is priced on the actual surfaces, with 25% off labor on projects booked by October 31, 2026.</small></div>');
     if (Q.visit) {
       say('Heads up: what you described is worth <strong>seeing in person</strong>. Peeling, water damage, failing finishes and commercial access all change the prep plan, and the visit is free either way.');
       answers.recommendation = 'Site visit recommended';
@@ -425,7 +414,7 @@
       answers.recommendation = 'Photo quote suitable';
     }
     setTimeout(function () {
-      say('One honest question before I take your details: if a written proposal comes back at that number, with the preparation spelled out and your dates confirmed, is that something you would be ready to move forward on?');
+      say('One honest question before I take your details: if the written proposal comes back at a number that works for you, with the preparation spelled out and your dates confirmed, is that something you would be ready to move forward on?');
       opts([
         { label: 'Yes, if the details are right', hot: true, fn: function () { answers.intent = 'Ready to move forward if details fit'; collect('quote'); } },
         { label: 'Maybe, I want to compare', fn: function () { answers.intent = 'Comparing options'; say('Smart. When you compare, look at four lines: the preparation, the exact product and sheen, the number of coats, and the warranty. A lower number is almost always one of those four being smaller. Let me get you the written version so you have something real to compare.'); collect('quote'); } },
@@ -479,7 +468,7 @@
     var pics = (window.BCP && BCP.photos) ? BCP.photos(fin) : Promise.resolve([]);
     pics.then(function (list) {
       list.forEach(function (p, i) { fd.append('photo_' + (i + 1), p); });
-      return (window.BCP && BCP.send) ? BCP.send(fd, 'HOTLINE ' + (kind === 'callback' ? 'CALLBACK' : 'RAPID QUOTE') + ': Painter Hotline') : Promise.resolve('fail');
+      return (window.BCP && BCP.send) ? BCP.send(fd, 'FLAT ' + (kind === 'callback' ? 'CALLBACK' : 'QUICK QUOTE') + ': Boulder CO Painters') : Promise.resolve('fail');
     }).then(function (state) {
       prog(1);
       if (state === 'ok') {
@@ -499,15 +488,16 @@
   var hid = false;
   try { hid = sessionStorage.getItem('flTipX') === '1'; } catch (e) { }
   if (!hid) {
-    setTimeout(function () {
+    var showTip = function () {
       if (panel && !panel.hidden) return;
-      var tip = el('<div class="fl-tip" role="status">I can price your Boulder project in about ninety seconds. Want to try?<button type="button" aria-label="Dismiss">&times;</button></div>');
+      var tip = el('<div class="fl-tip" role="status">Questions about a Boulder County paint job? Ask me.<button type="button" aria-label="Dismiss">&times;</button></div>');
       launch.insertBefore(tip, launch.firstChild);
       tip.addEventListener('click', function (e) {
         if (e.target.tagName === 'BUTTON') { tip.remove(); try { sessionStorage.setItem('flTipX', '1'); } catch (x) { } }
         else openPanel();
       });
-    }, 1400);
+    };
+    if (window.innerWidth >= 760) setTimeout(showTip, 1400);
   }
 
   var s2 = document.createElement('style');
