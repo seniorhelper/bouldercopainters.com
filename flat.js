@@ -203,7 +203,7 @@
     [/\b(mountain|nederland|ward|jamestown|canyon|peak to peak|altitude|elevation)\b/i, 'Yes, we paint the Boulder County mountain towns. Nederland sits near 8,200 feet and Ward above 9,500, so the exterior season there is the middle of summer and stain work is common. More on <a href="/painting-season-and-altitude/">season and altitude</a>.'],
     [/\b(warranty|guarantee)\b/i, 'Every project carries a <strong>5-year workmanship warranty</strong> in writing, plus the manufacturer warranty on the Sherwin-Williams, PPG or Behr coating. Details on the <a href="/our-warranty/">warranty page</a>.'],
     [/\b(insur|licen|bonded)\b/i, 'Fully insured, with a certificate provided at the quote. Colorado issues no statewide painting license, so insurance and a written scope are what you should ask any painter to produce.'],
-    [/\b(discount|deal|offer|coupon|special|sale|25)\b/i, 'Right now: <strong>25% off projects booked by October 31, 2026</strong>. Labor only, paint and materials not included. Ask for it when you <a href="/get-an-estimate/">request an estimate</a>.'],
+    [/\b(discount|deal|offer|coupon|special|sale|25)\b/i, 'Right now: <strong>25% off projects booked by November 15, 2026</strong>. Labor only, paint and materials not included. Ask for it when you <a href="/get-an-estimate/">request an estimate</a>.'],
     [/\b(peel|flak|bubbl|chalk|fail|crack|bad job|redo)\b/i, 'That is one of our most common calls. Peeling usually traces to moisture, contamination, incompatible layers or missing primer, and the fix depends on which. Send photos through the quick quote and we will tell you what we see.'],
     [/\b(cabinet|kitchen)\b/i, 'Cabinets get degreased, scuff sanded, primed with a primer made to grip factory finishes, and sprayed with a hard cabinet enamel. Fixr&rsquo;s 2026 national figures put a kitchen at $2,500 to $6,500. More on <a href="/kitchen-cabinet-refinishing/">cabinet refinishing</a>.'],
     [/\b(deck|fence|stain)\b/i, 'Decks and fences get cleaned, brightened, sanded where needed and sealed with products chosen for Colorado sun. More on <a href="/deck-and-fence-staining/">deck and fence staining</a>.'],
@@ -406,7 +406,7 @@
       (answers.condition ? '<span class="ln"><span>Condition</span><span>' + answers.condition + '</span></span>' : '') +
       '<span class="ln"><span>Area</span><span>' + (answers.region || '') + '</span></span>' +
       '<span class="ln"><span>Ticket</span><span>' + Q.ticket + '</span></span>' +
-      '<small>I will not guess at a dollar figure for a house I have not seen. ' + ref + ' Your written estimate is priced on the actual surfaces, with 25% off labor on projects booked by October 31, 2026.</small></div>');
+      '<small>I will not guess at a dollar figure for a house I have not seen. ' + ref + ' Your written estimate is priced on the actual surfaces, with 25% off labor on projects booked by November 15, 2026.</small></div>');
     if (Q.visit) {
       say('Heads up: what you described is worth <strong>seeing in person</strong>. Peeling, water damage, failing finishes and commercial access all change the prep plan, and the visit is free either way.');
       answers.recommendation = 'Site visit recommended';
