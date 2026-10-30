@@ -189,7 +189,10 @@
 
   /* ---------- knowledge base ---------- */
   var KB = [
-    [/(cheaper|do better on price|better price|lower (the )?price|beat .*(price|quote|bid)|more of a discount|negotiat|price match)/i, 'Straight answer: the October discount is already built into the number you get, so there is not a second price hiding behind it. What we can move is scope or schedule. If budget is the constraint, we can phase the work, start with the sun-facing elevations that are actually failing, and come back for the rest.'],
+    [/\b(cure|cured|harden|how soon can i use|when can i use)\b/i, 'Dry and cured are different things. Cabinet enamel is usually dry to the touch in hours, can be handled in a few days, and reaches full hardness over about 30 days, per the manufacturer data sheets. Our <a href="/how-long-do-painted-cabinets-take-to-cure/">cabinet cure guide</a> has the day-by-day plan.'],
+    [/\blongmont\b/i, 'Yes, we paint Longmont, inside and out. For rooms, ceilings and trim there, see <a href="/interior-painting-longmont/">interior painting in Longmont</a>; for the whole city, <a href="/where-we-work/longmont/">our Longmont page</a>.'],
+    [/\b(winter|snow|cold months|this winter|december|january|february)\b/i, 'Winter is interior season here, and it suits it: crews are easier to book and nothing depends on the weather. Our <a href="/winter-interior-painting-boulder/">winter interior guide</a> covers ventilation with the windows shut, snow light and mountain-town access. Projects booked by December 31, 2026 get 25%% off labor.'],
+    [/(cheaper|do better on price|better price|lower (the )?price|beat .*(price|quote|bid)|more of a discount|negotiat|price match)/i, 'Straight answer: the winter discount is already built into the number you get, so there is not a second price hiding behind it. What we can move is scope or schedule. If budget is the constraint, we can phase the work, start with the sun-facing elevations that are actually failing, and come back for the rest.'],
     [/\b(why (you|should)|what makes|different|better than|choose)\b/i, 'Four things, honestly. Crews that specialize by type of work instead of doing a bit of everything. Over 20 years of Colorado-specific experience, which mostly means knowing what fails here and why. A dedicated project manager so you have one person to call. And a 5-year workmanship warranty in writing, which only works because the preparation is real.'],
     [/\b(twice|again|redo|do it over|short cut|shortcut|cheap (job|bid|quote))\b/i, 'The expensive version of this is doing it twice. A cheap job skips washing, scraping and priming, looks fine for a season, then fails. The second painter has to remove the failed coating before starting, so you pay for the first job, the removal and the correct job. That is the whole reason our prep is itemized in writing.'],
     [/\b(prep|preparation|what.*included|scope|process)\b/i, 'On an exterior: protect the property, power wash, scrape and sand back to a sound edge, fill and caulk, prime what needs it, then the agreed coats on siding, trim, window and door casings, soffit and fascia. Then full cleanup and a walkthrough with you. Interiors follow the same logic indoors. All of it is itemized on your proposal.'],
@@ -203,7 +206,7 @@
     [/\b(mountain|nederland|ward|jamestown|canyon|peak to peak|altitude|elevation)\b/i, 'Yes, we paint the Boulder County mountain towns. Nederland sits near 8,200 feet and Ward above 9,500, so the exterior season there is the middle of summer and stain work is common. More on <a href="/painting-season-and-altitude/">season and altitude</a>.'],
     [/\b(warranty|guarantee)\b/i, 'Every project carries a <strong>5-year workmanship warranty</strong> in writing, plus the manufacturer warranty on the Sherwin-Williams, PPG or Behr coating. Details on the <a href="/our-warranty/">warranty page</a>.'],
     [/\b(insur|licen|bonded)\b/i, 'Fully insured, with a certificate provided at the quote. Colorado issues no statewide painting license, so insurance and a written scope are what you should ask any painter to produce.'],
-    [/\b(discount|deal|offer|coupon|special|sale|25)\b/i, 'Right now: <strong>25% off projects booked by November 15, 2026</strong>. Labor only, paint and materials not included. Ask for it when you <a href="/get-an-estimate/">request an estimate</a>.'],
+    [/\b(discount|deal|offer|coupon|special|sale|25)\b/i, 'Right now: <strong>25% off projects booked by December 31, 2026</strong>. Labor only, paint and materials not included. Ask for it when you <a href="/get-an-estimate/">request an estimate</a>.'],
     [/\b(peel|flak|bubbl|chalk|fail|crack|bad job|redo)\b/i, 'That is one of our most common calls. Peeling usually traces to moisture, contamination, incompatible layers or missing primer, and the fix depends on which. Send photos through the quick quote and we will tell you what we see.'],
     [/\b(cabinet|kitchen)\b/i, 'Cabinets get degreased, scuff sanded, primed with a primer made to grip factory finishes, and sprayed with a hard cabinet enamel. Fixr&rsquo;s 2026 national figures put a kitchen at $2,500 to $6,500. More on <a href="/kitchen-cabinet-refinishing/">cabinet refinishing</a>.'],
     [/\b(deck|fence|stain)\b/i, 'Decks and fences get cleaned, brightened, sanded where needed and sealed with products chosen for Colorado sun. More on <a href="/deck-and-fence-staining/">deck and fence staining</a>.'],
@@ -220,6 +223,21 @@
     [/\b(who are you|about (you|the company)|company)\b/i, 'Boulder CO Painters is a Boulder County painting company with 20+ years of Colorado experience, full insurance and a written 5-year workmanship warranty. More on the <a href="/who-we-are/">about page</a>.']
   ];
 
+
+  /* ---------- single answer adapter ----------
+     All typed questions go through window.PH_BOT.ask(text, ctx) -> Promise<html|null>.
+     To wire an AI API later, set window.PH_BOT.backend = function (text, ctx) { return fetch(...).then(...) }.
+     If the backend is missing, fails or returns nothing, the local knowledge base answers. */
+  var PH_BOT = window.PH_BOT = window.PH_BOT || {};
+  PH_BOT.character = 'Flat'; PH_BOT.site = 'bouldercopainters.com'; PH_BOT.phone = DISP;
+  PH_BOT.local = function (t) { return lookup(t); };
+  PH_BOT.ask = function (text, ctx) {
+    var kb = function () { return lookup(text); };
+    if (typeof PH_BOT.backend !== 'function') return Promise.resolve(kb());
+    return Promise.resolve().then(function () { return PH_BOT.backend(text, ctx || {}); })
+      .then(function (r) { return r || kb(); }, function () { return kb(); });
+  };
+
   function lookup(t) { for (var i = 0; i < KB.length; i++) if (KB[i][0].test(t)) return KB[i][1]; return null; }
 
   function typed() {
@@ -227,9 +245,10 @@
     if (!t) return;
     inp.value = ''; say(t, 'me'); log.push('Visitor: ' + t);
     if (capture) { var fn = capture; capture = null; fn(t); return; }
-    var a = lookup(t);
-    say(a || 'I would rather get you a real answer than guess at that one. The fastest path is a quick quote, or call <a href="tel:' + TEL + '">' + DISP + '</a> and ask a painter directly.');
-    menu();
+    PH_BOT.ask(t, { page: location.pathname, transcript: log.slice(-12) }).then(function (a) {
+      say(a || 'I would rather get you a real answer than guess at that one. The fastest path is a quick quote, or call <a href="tel:' + TEL + '">' + DISP + '</a> and ask a painter directly.');
+      menu();
+    });
   }
   function menu() {
     opts([{ label: 'Run a quick quote', hot: true, fn: startQuote },
@@ -406,7 +425,7 @@
       (answers.condition ? '<span class="ln"><span>Condition</span><span>' + answers.condition + '</span></span>' : '') +
       '<span class="ln"><span>Area</span><span>' + (answers.region || '') + '</span></span>' +
       '<span class="ln"><span>Ticket</span><span>' + Q.ticket + '</span></span>' +
-      '<small>I will not guess at a dollar figure for a house I have not seen. ' + ref + ' Your written estimate is priced on the actual surfaces, with 25% off labor on projects booked by November 15, 2026.</small></div>');
+      '<small>I will not guess at a dollar figure for a house I have not seen. ' + ref + ' Your written estimate is priced on the actual surfaces, with 25% off labor on projects booked by December 31, 2026.</small></div>');
     if (Q.visit) {
       say('Heads up: what you described is worth <strong>seeing in person</strong>. Peeling, water damage, failing finishes and commercial access all change the prep plan, and the visit is free either way.');
       answers.recommendation = 'Site visit recommended';

@@ -1,2 +1,1 @@
-# bouldercopainters.com
-bouldercopainters.com
+Static site.
