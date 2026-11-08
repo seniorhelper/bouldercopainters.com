@@ -9,6 +9,9 @@ Brand: Boulder CO Painters (trade name of Search Converts LLC, dba Painter Hotli
 - Lighthouse mobile home (before push): Performance 98, Accessibility 100, Best Practices 100, SEO 100.
 - Deep pages already exist for the Boulder-specific angles: historic homes, wildfire zone, altitude/season, cedar siding, fiber cement, lead-safe, zero-VOC, neighborhoods.
 
+## Real search data
+Search Console, last 28 days to Nov 6 (read 2026-11-08): 0 clicks, 1,500 impressions, average position 48.9. Top impression queries: interior house painting (185), interior painting (152), exterior painting (108), cabinet refinishing (27), painters boulder co (24), painters near me (22), house painters longmont co (20). Read: the site is seen but not trusted; trust signals (GBP, reviews, local links) come before more pages.
+
 ## Keyword targets
 | Term | Owner page | Real SERP 2026-11-08 |
 |---|---|---|
